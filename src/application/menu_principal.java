@@ -19,6 +19,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 
 /**
  * Clase principal del menú de la aplicación.
@@ -76,7 +78,12 @@ public class menu_principal {
      */
     @FXML
     public ImageView Creditos;
-
+    
+    
+    /**
+     Objeto ImageView para las imagenes
+     * */
+    
     @FXML
     public GridPane main;
 
@@ -104,6 +111,13 @@ public class menu_principal {
     @FXML
     public Button creditos;
 
+    
+    @FXML
+    public Circle clip;
+    
+    @FXML
+    public ImagePattern ajaj;
+    
     /**
      * Objeto Button para la ventana de Deepfake
      */
@@ -126,10 +140,11 @@ public class menu_principal {
      */
     @FXML
     public void initialize() {
-        inicializarAnimacion_imagen_techcom();
-        inicializarAnimacion_boton_deepfake();
-        inicializarAnimacion_boton_creditos();
-        inicializarAnimacion_boton_clonacion_de_voz();
+        //inicializarAnimacion_imagen_techcom();
+        //inicializarAnimacion_boton_deepfake();
+        //inicializarAnimacion_boton_creditos();
+        //inicializarAnimacion_boton_clonacion_de_voz();
+        cargar_circulo();
         //inicializarAnimacion_click_jugar();
         //inicializarAnimacion_click_salir();
         //int puntosIniciales = 0;
@@ -137,6 +152,16 @@ public class menu_principal {
     }
 
 
+    public void cargar_circulo(){
+        clip.setCenterX(150);
+        clip.setCenterY(150);
+
+        // Cargar la imagen
+        Image image = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
+
+        // Aplicar la imagen al círculo como patrón
+        clip.setFill(new ImagePattern(image));
+    }
     /**
      * Crea una animacion para el boton clonacion de voz (operativa)
      */

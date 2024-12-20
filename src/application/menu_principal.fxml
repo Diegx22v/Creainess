@@ -11,15 +11,16 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane fx:id="main" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1028.0" prefWidth="2038.0" styleClass="main-container" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.menu_principal">
+<GridPane fx:id="main" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1028.0" prefWidth="2038.0" styleClass="main-container" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.menu_principal">
       <columnConstraints>
       <ColumnConstraints percentWidth="100.0" />
       <ColumnConstraints />
       </columnConstraints>
-   <ScrollPane fitToWidth="true" hbarPolicy="ALWAYS" prefHeight="1018.0" prefWidth="2040.0" vbarPolicy="ALWAYS">
+   <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="1018.0" prefWidth="2040.0" vbarPolicy="ALWAYS">
      <content>
        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1029.0" prefWidth="2049.0">
             <children>
@@ -136,27 +137,51 @@
                            </Button>
                         </children>
                         <GridPane.margin>
-                           <Insets left="650.0" right="650.0" top="150.0" />
+                           <Insets left="650.0" right="650.0" top="400.0" />
                         </GridPane.margin>
                      </VBox>
                      <VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="269.0" prefWidth="499.0" style="-fx-padding: 10; -fx-background-color: #d1d1e9; -fx-background-radius: 15; -fx-border-radius: 15;" GridPane.columnSpan="2" GridPane.rowIndex="1">
                         <children>
-                           <ImageView fx:id="Deepfake" fitHeight="157.0" fitWidth="269.0" onMouseClicked="#nueva_ventana" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@resources/Deepfake.jpg" />
-                              </image>
+                           <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black;">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Danna L.">
+                                    <font>
+                                       <Font name="Comic Sans MS" size="22.0" />
+                                    </font>
+                                 </Text>
+                              </children>
                               <VBox.margin>
-                                 <Insets bottom="10.0" />
+                                 <Insets bottom="15.0" right="525.0" />
                               </VBox.margin>
-                           </ImageView>
-                           <Button fx:id="deepfake" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ventana_deepfake" onMouseEntered="#soft_deepfake" prefHeight="84.0" prefWidth="461.0" style="-fx-background-color: #6246ea; -fx-background-radius: 15;" text="Deepfake" textAlignment="JUSTIFY" textFill="#fffffe" textOverrun="WORD_ELLIPSIS">
+                           </HBox>
+                           <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-radius: 5;">
+                              <children>
+                                 <ImageView fx:id="Deepfake" fitHeight="236.0" fitWidth="405.0" onMouseClicked="#nueva_ventana" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                    <image>
+                                       <Image url="@resources/Deepfake.jpg" />
+                                    </image>
+                                    <HBox.margin>
+                                       <Insets bottom="5.0" top="5.0" />
+                                    </HBox.margin>
+                                 </ImageView>
+                              </children>
+                              <VBox.margin>
+                                 <Insets left="110.0" right="110.0" />
+                              </VBox.margin>
+                           </HBox>
+                           <HBox prefHeight="100.0" prefWidth="200.0">
+                              <VBox.margin>
+                                 <Insets top="10.0" />
+                              </VBox.margin>
+                           </HBox>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Un deepfake es un video, audio o imagen la cual imita el sonido o la apariencia de una persona. Son ejecutados por medio de la inteligencia artificial. Pero debemos aclarar que no todas las aplicaciones de deepfakes son peligrosas." wrappingWidth="608.642578125">
                               <font>
-                                 <Font name="Comic Sans MS" size="40.0" />
+                                 <Font name="Calibri" size="20.0" />
                               </font>
-                           </Button>
+                           </Text>
                         </children>
                         <GridPane.margin>
-                           <Insets left="700.0" right="700.0" top="80.0" />
+                           <Insets left="700.0" right="700.0" top="130.0" />
                         </GridPane.margin>
                      </VBox>
                   </children>
@@ -180,37 +205,62 @@
          <Insets bottom="925.0" left="400.0" right="400.0" top="10.0" />
       </GridPane.margin>
       <children>
-         <VBox blendMode="SRC_ATOP" centerShape="false" pickOnBounds="false" prefHeight="80.0" prefWidth="138.0" scaleShape="false" style="-fx-background-radius: 20; -fx-border-radius: 20;" styleClass="Circulo_uno" stylesheets="@resources/menu_principal.css" />
-            
-                                                                  <Text fill="#2b2c34" text="Bienvenidos" textAlignment="CENTER" wrappingWidth="807.2000122070312">
-            <font>
-               <Font name="Playfair Display Italic" size="68.0" />
-            </font>
-         </Text>
+         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <Circle fx:id="clip" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE" />
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
+            </children>
+            <HBox.margin>
+               <Insets right="1100.0" />
+            </HBox.margin>
+         </VBox>
       </children>
    </HBox>
-   <VBox alignment="TOP_CENTER" prefHeight="426.0" prefWidth="288.0" spacing="90.0" style="-fx-background-color: #d1d1e9;" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
+   <VBox alignment="TOP_CENTER" prefHeight="1018.0" prefWidth="294.0" style="-fx-border-color: black; -fx-border-radius: 16; -fx-border-width: 1;" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+      <GridPane.margin>
+         <Insets bottom="10.0" left="65.0" right="1700.0" top="5.0" />
+      </GridPane.margin>
       <children>
-         <Button fx:id="deepfake1" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ventana_deepfake" onMouseEntered="#soft_deepfake" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #6246ea; -fx-background-radius: 15;" textAlignment="JUSTIFY" textFill="#fffffe" textOverrun="WORD_ELLIPSIS">
+         <ImageView fx:id="Deepfake1" fitHeight="79.0" fitWidth="144.0" onMouseClicked="#nueva_ventana" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@resources/creainess.png" />
+            </image>
+         </ImageView>
+         <Button fx:id="clonacion_de_voz1" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ventana_clonacion_de_voz" onMouseEntered="#soft_clonacion" prefHeight="84.0" prefWidth="211.0" style="-fx-background-color: white; -fx-background-radius: 15;" text="Inicio" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS">
             <font>
                <Font name="Comic Sans MS" size="40.0" />
             </font>
+            <VBox.margin>
+               <Insets top="100.0" />
+            </VBox.margin>
          </Button>
-         <Button fx:id="clonacion_de_voz1" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ventana_clonacion_de_voz" onMouseEntered="#soft_clonacion" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #6246ea; -fx-background-radius: 15;" textAlignment="JUSTIFY" textFill="#fffffe" textOverrun="WORD_ELLIPSIS">
+         <Button fx:id="clonacion_de_voz11" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ventana_clonacion_de_voz" onMouseEntered="#soft_clonacion" prefHeight="84.0" prefWidth="222.0" style="-fx-background-color: white; -fx-background-radius: 15;" text="Juegos" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS">
             <font>
                <Font name="Comic Sans MS" size="40.0" />
             </font>
+            <VBox.margin>
+               <Insets top="15.0" />
+            </VBox.margin>
          </Button>
-         <Button fx:id="creditos1" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ventana_creditos" onMouseEntered="#soft_creditos" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #6246ea; -fx-background-radius: 15;" textFill="#fffffe" textOverrun="WORD_ELLIPSIS">
+         <Button fx:id="clonacion_de_voz111" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="10.0" layoutY="94.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ventana_clonacion_de_voz" onMouseEntered="#soft_clonacion" prefHeight="84.0" prefWidth="256.0" style="-fx-background-color: white; -fx-background-radius: 15;" text="Menciones" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS">
             <font>
                <Font name="Comic Sans MS" size="40.0" />
             </font>
+            <VBox.margin>
+               <Insets top="15.0" />
+            </VBox.margin>
+         </Button>
+         <Button fx:id="clonacion_de_voz1111" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="10.0" layoutY="178.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ventana_clonacion_de_voz" onMouseEntered="#soft_clonacion" prefHeight="84.0" prefWidth="221.0" style="-fx-background-color: white; -fx-background-radius: 15;" text="Ayuda" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS">
+            <font>
+               <Font name="Comic Sans MS" size="40.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="450.0" />
+            </VBox.margin>
          </Button>
       </children>
-      <GridPane.margin>
-         <Insets bottom="500.0" left="60.0" right="1890.0" top="100.0" />
-      </GridPane.margin>
    </VBox>
+   
        <rowConstraints>
       <RowConstraints percentHeight="99.0" />
    </rowConstraints>

@@ -27,6 +27,12 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Group;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Screen;
 /**
  * Clase de creditos del proyecto
  * Maneja la logica de esta ventana
@@ -40,6 +46,9 @@ public class creditos {
     @FXML
     public VBox contenedor_vertical;
 
+    @FXML
+    public Text integrantes_d;
+    
     /**
      *  Objeto VBox para contener el segundo grupo
      */
@@ -51,6 +60,12 @@ public class creditos {
      */
     @FXML
     public VBox Contenedor_vertical_tres;
+    
+    @FXML
+    public Text integrantes_c;
+    
+    @FXML
+    public Text profesores;
 
     /**
      *  Imagen de Techcon
@@ -76,7 +91,20 @@ public class creditos {
     @FXML
     public void initialize(){
         initialize_animation_return_credits();
-    }
+        String texto_d = "* Diego Villota\n"
+                + "* Dayana Torres\n"
+                + "* Carlos Vélez\n"
+                + "* Franklin Chunga\n";
+        String texto_c = "* Danna Lopez\n"
+                + "* Felix Mendoza\n"
+                + "* Daniela Marcillo\n"
+                + "* Valeria Arias\n";
+        String texto_p = "* Lcda. Maria Fernanda Lavaye\n"
+                + "* Lcdo. Anthony Sotomayor";
+        integrantes_d.setText(texto_d);
+        integrantes_c.setText(texto_c);
+        profesores.setText(texto_p);
+                }
 
     /**
      * Inicia una animacion
@@ -117,19 +145,51 @@ public class creditos {
             Return_credits.setDisable(true);
             Stage cerrar = (Stage) Return_credits.getScene().getWindow();
             cerrar.close();
-            Parent root = FXMLLoader.load(getClass().getResource("menu_principal.fxml"));
-            Stage return_main_scene = new Stage();
-            return_main_scene.setTitle("TECHCON");
+                      
+                        Stage primaryStage = new Stage();
+            double baseWidth = 1920;
+            double baseHeight = 1080;
+
+            // Detectar resolución de pantalla
+            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+            double screenWidth = screenBounds.getWidth();
+            double screenHeight = screenBounds.getHeight();
+
+            // Configuración de la ventana principal
             Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
-            return_main_scene.getIcons().add(icono);
-            Scene Deepfake = new Scene(root, 800, 600);
-            return_main_scene.setMaximized(true);
-            return_main_scene.setScene(Deepfake);
-            Deepfake.getStylesheets().add(getClass().getResource("resources/interfaz_principal.css").toExternalForm());
+            primaryStage.getIcons().add(icono);
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("menu_principal.fxml"));
+            GridPane main = loader.load(); // Se asegura de que el GridPane es el nodo raíz
+
+            // Crear un grupo para aplicar el escalado al contenido
+            Group scalableGroup = new Group(main);
+
+            // Crear una escena con la resolución detectada
+            Scene scene = new Scene(new StackPane(scalableGroup), screenWidth, screenHeight);
+            scene.getStylesheets().add(getClass().getResource("resources/interfaz_principal.css").toExternalForm());
+
+            // Calcular el factor de escalado
+            double scaleX = screenWidth / baseWidth;
+            double scaleY = screenHeight / baseHeight;
+            double scale = Math.min(scaleX, scaleY); // Mantener proporciones
+
+            // Aplicar el escalado
+            scalableGroup.setScaleX(scale);
+            scalableGroup.setScaleY(scale);
+
+            // Centrar el contenido escalado en la ventana
+            StackPane stackPane = (StackPane) scene.getRoot();
+            stackPane.setAlignment(Pos.CENTER);
+
+            // Configuración del Stage
+            primaryStage.setMaximized(true);
+            primaryStage.setTitle("TECHCON");
+            primaryStage.setScene(scene);
+            primaryStage.show();
 
             // Mostrar la nueva ventana
             cerrar.close();
-            return_main_scene.show();
         } catch (Exception e) {
             // ALERTA`
             Alert errorAlert = new Alert(AlertType.ERROR);

@@ -1,5 +1,9 @@
 package application;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import javafx.animation.Animation.Status;
 import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
@@ -18,6 +22,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -41,6 +46,10 @@ public class menu_principal {
      */
     @FXML
     public ImageView Techcom;
+    
+        @FXML
+    public Button soporte;
+
 
     /**
      * Objeto ImageView para mostrar una imagen
@@ -104,7 +113,7 @@ public class menu_principal {
     /**
      * Objeto ScaleTransition para el boton de clonacion de voz
      */
-    public ScaleTransition  animacion_de_clonacion;
+    public ScaleTransition  animacion_de_soporte;
     /**
      * Objeto ScaleTransition para el boton de creditos
      */
@@ -127,13 +136,21 @@ public class menu_principal {
      * Objeto Button para la ventana de Deepfake
      */
     @FXML
-    public Button deepfake;
+    public Button inicio;
+    
+    @FXML
+    public Text inicio_1;
 
     /**
      * Objeto Button para la ventana de Clonacion de voz
      */
     @FXML
     public Button clonacion_de_voz;
+    
+    @FXML 
+    public ScrollPane principio;
+
+    
     /**
      * Inicializa los componentes gráficos, las animaciones y las acciones asociadas a los botones de la interfaz.
      * Esta funcion se llama automáticamente cuando la interfaz se carga.
@@ -146,8 +163,9 @@ public class menu_principal {
     @FXML
     public void initialize() {
         //inicializarAnimacion_imagen_techcom();
-        //inicializarAnimacion_boton_deepfake();
+        inicializarAnimacion_boton_inicio();
         inicializarAnimacion_boton_creditos();
+        inicializarAnimacion_boton_soporte();
         //inicializarAnimacion_boton_clonacion_de_voz();
         cargar_circulo();
         //inicializarAnimacion_click_jugar();
@@ -157,6 +175,21 @@ public class menu_principal {
     }
 
 
+    @FXML
+    public void regreso(){
+        double targetY = inicio_1.getBoundsInParent().getMinY();
+
+        // Obtén la altura total del contenido en el VBox
+        double totalHeight = principio.getBoundsInLocal().getHeight();
+
+        // Ajusta el valor de desplazamiento vertical
+        principio.setVvalue(targetY / totalHeight);
+
+ 
+    
+    }
+    
+    
     public void cargar_circulo(){
         clip.setCenterX(150);
         clip.setCenterY(150);
@@ -170,21 +203,21 @@ public class menu_principal {
     /**
      * Crea una animacion para el boton clonacion de voz (operativa)
      */
-    public void inicializarAnimacion_boton_clonacion_de_voz() {
+    public void inicializarAnimacion_boton_soporte() {
 
-        animacion_de_clonacion = new ScaleTransition(Duration.millis(150), clonacion_de_voz);
-        animacion_de_clonacion.setByX(0.02);
-        animacion_de_clonacion.setByY(0.02);
-        animacion_de_clonacion.setAutoReverse(true);
-        animacion_de_clonacion.setCycleCount(2);
+        animacion_de_soporte = new ScaleTransition(Duration.millis(150), soporte);
+        animacion_de_soporte.setByX(0.02);
+        animacion_de_soporte.setByY(0.02);
+        animacion_de_soporte.setAutoReverse(true);
+        animacion_de_soporte.setCycleCount(2);
     }
 
     /**
      * ejecucion (handler) de animacion
      */
     @FXML
-    public void soft_clonacion() {
-        animacion_soft_clonacion_de_voz(animacion_de_clonacion);
+    public void soft_soporte() {
+        animacion_soft_soporte(animacion_de_soporte);
     }
 
 
@@ -194,7 +227,7 @@ public class menu_principal {
      *
      * @param animacion_de_clonacion necesita de un objeto scaletransition
      */
-    public void animacion_soft_clonacion_de_voz(ScaleTransition animacion_de_clonacion) {
+    public void animacion_soft_soporte(ScaleTransition animacion_de_clonacion) {
         if (animacion_de_clonacion.getStatus() != Status.RUNNING) {
             animacion_de_clonacion.playFromStart();
         }
@@ -205,9 +238,9 @@ public class menu_principal {
     /**
      * Crea una animacion para el boton deepfake (operativa)
      */
-    public void inicializarAnimacion_boton_deepfake() {
+    public void inicializarAnimacion_boton_inicio() {
 
-        animacion_de_deepfake = new ScaleTransition(Duration.millis(150), deepfake);
+        animacion_de_deepfake = new ScaleTransition(Duration.millis(150), inicio);
         animacion_de_deepfake.setByX(0.02);
         animacion_de_deepfake.setByY(0.02);
         animacion_de_deepfake.setAutoReverse(true);
@@ -218,7 +251,7 @@ public class menu_principal {
      *
      * @param animacion_de_deepfake necesita de un objeto ScaleTransition
      */
-    public void animacion_soft_deepfake(ScaleTransition animacion_de_deepfake) {
+    public void animacion_soft_inicio(ScaleTransition animacion_de_deepfake) {
         if (animacion_de_deepfake.getStatus() != Status.RUNNING) {
             animacion_de_deepfake.playFromStart();
         }
@@ -227,8 +260,8 @@ public class menu_principal {
      * ejecucion (handler) de animacion
      */
     @FXML
-    public void soft_deepfake() {
-        animacion_soft_deepfake(animacion_de_deepfake);
+    public void soft_inicio() {
+        animacion_soft_inicio(animacion_de_deepfake);
     }
 
 
@@ -316,7 +349,7 @@ public class menu_principal {
      * Ejecucion de animacion
      */
     @FXML
-    public void soft_techcom() {
+    public void soft_techcom() throws IOException, URISyntaxException {
         animacion_image(animacionTechcom);
 
     }
@@ -346,7 +379,8 @@ public class menu_principal {
     /**
      * Crea una ventana para Deepfake
      */
-    @FXML
+    
+    /*@FXML
     public void ventana_deepfake() {
         try {
             if (playsound == null) {
@@ -372,27 +406,15 @@ public class menu_principal {
         } catch (Exception e) {
             alerta_de_error(e);
         }
-    }
+    }*/
 
     /**
-     * Crea una ventana para clonacion de voz
-     */
+     * Crea un chat con el creador del software
+*/
     @FXML
-    public void ventana_clonacion_de_voz() {
+    public void apertura_soporte()throws URISyntaxException,IOException {
         try {
-            animacion_image(animacionTechcom);
-            Stage stage = (Stage) clonacion_de_voz.getScene().getWindow();
-            stage.close();
-            Parent root = FXMLLoader.load(getClass().getResource("clonacion_de_voz.fxml"));
-            Stage preguntas = new Stage();
-            preguntas.setTitle("Clonacion de voz");
-            Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
-            preguntas.getIcons().add(icono);
-            Scene Deepfake = new Scene(root, 800, 600);
-            preguntas.setMaximized(true);
-            preguntas.setScene(Deepfake);
-            Deepfake.getStylesheets().add(getClass().getResource("resources/menu_principal.css").toExternalForm());
-            preguntas.show();
+            Desktop.getDesktop().browse(new URI("https://api.whatsapp.com/send?phone=+5930968053751&text=Hola%21+Necesito+ayuda+con+el+software+de+Creainess"));
         } catch (Exception e) {
             alerta_de_error(e);
         }
@@ -483,5 +505,6 @@ public class menu_principal {
         }
     }
 
+    
 
 }

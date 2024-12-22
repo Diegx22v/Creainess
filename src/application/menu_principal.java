@@ -162,7 +162,7 @@ public class menu_principal {
      */
     @FXML
     public void initialize() {
-        //inicializarAnimacion_imagen_techcom();
+        inicializarAnimacion_imagen_techcom();
         inicializarAnimacion_boton_inicio();
         inicializarAnimacion_boton_creditos();
         inicializarAnimacion_boton_soporte();
@@ -323,9 +323,14 @@ public class menu_principal {
     /**
      * Crea animacion de imagen
      */
+    
+    
+    @FXML
+    public Button juegos;
+    
     public void inicializarAnimacion_imagen_techcom() {
 
-        animacionTechcom = new ScaleTransition(Duration.millis(150), Techcom);
+        animacionTechcom = new ScaleTransition(Duration.millis(150), juegos);
         animacionTechcom.setByX(0.03);
         animacionTechcom.setByY(0.03);
         animacionTechcom.setAutoReverse(true);
@@ -485,21 +490,51 @@ public class menu_principal {
      * Plantilla de creacion de ventanas
      */
     @FXML
-    public void nueva_ventana() {
+    public void ventana_juegos() {
         try {
             //animacion_image(animacionTechcom);
-            Stage stage = (Stage) Techcom.getScene().getWindow();
+            Stage stage = (Stage) creditos.getScene().getWindow();
             stage.close();
-            Parent root = FXMLLoader.load(getClass().getResource("juegos.fxml"));
-            Stage preguntas = new Stage();
-            preguntas.setTitle("Juegos locos franklin");
+            double baseWidth = 1920;
+            double baseHeight = 1080;
+
+            // Detectar resolución de pantalla
+            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+            double screenWidth = screenBounds.getWidth();
+            double screenHeight = screenBounds.getHeight();
+
+            // Configuración de la ventana principal
             Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
-            preguntas.getIcons().add(icono);
-            Scene juegos_locos_franklin = new Scene(root, 800, 600);
-            preguntas.setMaximized(true);
-            preguntas.setScene(juegos_locos_franklin);
-            juegos_locos_franklin.getStylesheets().add(getClass().getResource("resources/menu_principal.css").toExternalForm());
-            preguntas.show();
+            stage.getIcons().add(icono);
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("juegos.fxml"));
+            //GridPane main = loader.load(); // Se asegura de que el GridPane es el nodo raíz
+            ScrollPane main = loader.load();
+            // Crear un grupo para aplicar el escalado al contenido
+            Group scalableGroup = new Group(main);
+
+            // Crear una escena con la resolución detectada
+            Scene scene = new Scene(new StackPane(scalableGroup), screenWidth, screenHeight);
+            scene.getStylesheets().add(getClass().getResource("resources/interfaz_principal.css").toExternalForm());
+
+            // Calcular el factor de escalado
+            double scaleX = screenWidth / baseWidth;
+            double scaleY = screenHeight / baseHeight;
+            double scale = Math.min(scaleX, scaleY); // Mantener proporciones
+
+            // Aplicar el escalado
+            scalableGroup.setScaleX(scale);
+            scalableGroup.setScaleY(scale);
+
+            // Centrar el contenido escalado en la ventana
+            StackPane stackPane = (StackPane) scene.getRoot();
+            stackPane.setAlignment(Pos.CENTER);
+
+            // Configuración del Stage
+            stage.setMaximized(true);
+            stage.setTitle("TECHCON");
+            stage.setScene(scene);
+            stage.show();
         } catch (Exception e) {
             alerta_de_error(e);
         }

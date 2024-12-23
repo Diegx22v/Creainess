@@ -31,12 +31,18 @@ public class juegos {
     @FXML
     public Button creditos;
     
+    /**
+     metodo para inicializar animaciones o eventos.
+     */
+    @FXML
+    public void initialize(){
+    
+    }
     
     
     /**
      * Metodo de cierre
      */
-    
     @FXML
     public void salir(){
         System.exit(0);

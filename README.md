@@ -20,7 +20,6 @@
            <li> <a href="https://netbeans.apache.org/front/main/download/archive/">Netbeans IDE 8.1</a></li>
            <li> <a href="https://git-scm.com/">Git</a></li>
            <li> <a href="https://github.com/">GitHub</a></li>
-           <li> <a href="https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html">Java (JDK & JRE V.8)</a></li>
-            
+           <li> <a href="https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html">Java (JDK & JRE V.8)</a></li>   
       </b>
  </ol>

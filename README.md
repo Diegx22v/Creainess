@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> Actualmente usamos el IDE Intellij Community Edition de JetBrains
+> Actualmente usamos el IDE Netbeans 8.1
 
 <h1><b>Bienvenidos al software de Creainess </h1>
 <h3><b>Este es el repositorio de nuestro proyecto de la feria de informatica (Techcom) de nuestro curso (2do TEC VESP)</b></h3>
@@ -14,16 +14,13 @@
  </ul>
  <h2><b>Software Librerias o herramientas con las que se trabaja 💻</b>
 </h2>
-
  <ol> 
            <b>
            <li><a href="https://gluonhq.com/products/scene-builder/">Scene Builder</a></li>
-           <li> <a href="https://www.eclipse.org/downloads/packages/installer">Eclipse IDE</a></li>
+           <li> <a href="https://netbeans.apache.org/front/main/download/archive/">Netbeans IDE 8.1</a></li>
            <li> <a href="https://git-scm.com/">Git</a></li>
            <li> <a href="https://github.com/">GitHub</a></li>
-           <li> <a href="https://www.oracle.com/java/technologies/javase/jdk22-archive-downloads.html">Java (JDK)</a></li>
-           <li> <a href="https://gluonhq.com/products/javafx/">SDK de Java FX</a></li>
-           <li> <a href="https://marketplace.eclipse.org/content/efxclipse">e(fx)eclipse (Extensión del IDE)</a></li>
-           <li> <a href="https://marketplace.eclipse.org/content/egit-git-integration-eclipse">egit (Extensión del IDE)</a></li>
+           <li> <a href="https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html">Java (JDK & JRE V.8)</a></li>
+            
       </b>
  </ol>

@@ -30,13 +30,9 @@ public class juegos {
      */
     @FXML
     public Button creditos;
-
-    /**
-     * Objeto Button para el tercer juego
-     */
-    @FXML
-    public  Button juegos_tres;
-
+    
+    
+    
     /**
      * Metodo de cierre
      */

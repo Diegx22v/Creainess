@@ -1,7 +1,7 @@
 > [!IMPORTANT]
 > Actualmente usamos el IDE Intellij Community Edition de JetBrains
 
-<h1><b>Bienvenidos al software de Creainess  </b><img src = "" alt="TECHCOM" width="50" height="50"></h1>
+<h1><b>Bienvenidos al software de Creainess </h1>
 <h3><b>Este es el repositorio de nuestro proyecto de la feria de informatica (Techcom) de nuestro curso (2do TEC VESP)</b></h3>
  <h2><b>Integrantes 🧑‍💻:</b></h2>
  <ul>

@@ -2,7 +2,7 @@
 > Actualmente usamos el IDE Netbeans 8.1
 
 <h1><b>Bienvenidos al software de Creainess </h1>
-<h3><b>Este es el repositorio de nuestro proyecto de la feria de informatica (Techcom) de nuestro curso (2do TEC VESP)</b></h3>
+<h3><b>Este es el repositorio de nuestro proyecto de la feria de informatica (Techcom) de nuestro curso (2do TEC VESP) con el producto (Software de Creainess hecho en Java 8 con JavaFX) </b></h3>
  <h2><b>Integrantes 🧑‍💻:</b></h2>
  <ul>
   <b>

@@ -1,4 +1,3 @@
-# TECHCON
 > [!IMPORTANT]
 > Actualmente usamos el IDE Intellij Community Edition de JetBrains
 

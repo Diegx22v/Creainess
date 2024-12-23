@@ -13,10 +13,10 @@ import java.awt.*;import java.io.IOException;import java.net.URI;import java.net
  */
 public class juegos {
     /**
-     * Objeto Button para el primer juego
+     * Objeto Button para jugar
      */
     @FXML
-    public Button juego_uno;
+    public Button jugar;
 
     /**
      * Objeto Button para salir del programa

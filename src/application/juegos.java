@@ -25,9 +25,11 @@ public class juegos {
     public Button salir;
     
     
-    
+    /**
+      Objeto Button para los creditos
+     */
     @FXML
-    public Button juego_dos;
+    public Button creditos;
 
     /**
      * Objeto Button para el tercer juego

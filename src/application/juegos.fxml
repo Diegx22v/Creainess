@@ -110,7 +110,7 @@
                </DropShadow>
             </effect>
          </Button>
-         <Button fx:id="jugar" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="84.0" prefWidth="560.0" style="-fx-background-color: c6bafe;" text="Jugar" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <Button fx:id="jugar" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ruleta" prefHeight="84.0" prefWidth="560.0" style="-fx-background-color: c6bafe;" text="Jugar" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
             <font>
                <Font name="SansSerif Regular" size="40.0" />
             </font>

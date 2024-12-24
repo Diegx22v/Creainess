@@ -4,6 +4,7 @@ import javafx.scene.control.ButtonBar;import javafx.scene.control.Hyperlink;impo
 import javafx.scene.layout.HBox;import javafx.scene.text.Text;import javafx.scene.web.WebEngine;import javafx.scene.web.WebView;
 import javafx.stage.Stage;import javafx.util.Duration;
 //import utils.Utils;
+import Utils.Ruleta;
 import java.awt.*;import java.io.IOException;import java.net.URI;import java.net.URISyntaxException;
 /**
  * Clase de la ventana de juegos.
@@ -36,7 +37,57 @@ public class juegos {
      */
     @FXML
     public void initialize(){
+    }
     
+    private Ruleta n;
+    public juegos(){
+        n = new Ruleta();
+    }
+    
+    @FXML
+    public void ruleta() throws IllegalStateException{
+        try{  
+            int numero;
+            numero = n.obtenerNumero();
+            switch (numero) {
+                case 1:
+                    System.out.println("primer juego cargado");
+                    /**                    
+                     * CARGAR VIDEO DE RULETA Y DESAPARECER LOS ELEMENTOS PARA QUE SE QUEDE SOLO LA RULETA Y SU VIDEO
+                     * TODA LA LOGICA DEL PRIMER JUEGO 
+                     * HECHO POR: FRANKLIN C.
+                     */ 
+                    break;
+                case 2:
+                    System.out.println("segundo juego cargado");
+                    /**                    
+                     * CARGAR VIDEO DE RULETA Y DESAPARECER LOS ELEMENTOS PARA QUE SE QUEDE SOLO LA RULETA Y SU VIDEO
+                     * TODA LA LOGICA DEL SEGUNDO JUEGO 
+                     * HECHO POR: FRANKLIN C.
+                     */ 
+                    break;
+                case 3:
+                    System.out.println("tercer juego cargado");
+                    /**
+                    * CARGAR VIDEO DE RULETA Y DESAPARECER LOS ELEMENTOS PARA QUE SE QUEDE SOLO LA RULETA Y SU VIDEO
+                    * TODA LA LOGICA DEL TERCER JUEGO 
+                    * HECHO POR: FRANKLIN C.
+                    */ 
+                    break;
+                case 4:
+                    /**
+                    * CARGAR VIDEO DE RULETA Y DESAPARECER LOS ELEMENTOS PARA QUE SE QUEDE SOLO LA RULETA Y SU VIDEO
+                    * TODA LA LOGICA DEL CUARTO JUEGO 
+                    * HECHO POR: FRANKLIN C.
+                    */ 
+                    System.out.println("cuarto juego cargado");
+                    break;
+                default:
+                    System.out.println("error");
+                }
+        }catch(IllegalStateException e){
+            System.out.println(e.getMessage());
+        }
     }
     
     

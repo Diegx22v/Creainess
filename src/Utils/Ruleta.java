@@ -23,7 +23,7 @@ public class Ruleta {
 
     public int obtenerNumero() {
         if (numeros.isEmpty()) {
-            throw new IllegalStateException("...");
+            throw new IllegalStateException("Se llego al limite de generacion de numeros");
         }
         int indice = aleatorio.nextInt(numeros.size());
         int numero = numeros.get(indice);

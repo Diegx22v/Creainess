@@ -86,7 +86,9 @@ public class juegos {
                     System.out.println("error");
                 }
         }catch(IllegalStateException e){
-            System.out.println(e.getMessage());
+            alerta_de_error("Cantidad de juegos excedida",e);
+            Stage stage = (Stage) salir.getScene().getWindow();
+            stage.close();
         }
     }
     
@@ -97,6 +99,22 @@ public class juegos {
     @FXML
     public void salir(){
         System.exit(0);
+    }
+    
+    
+       /**
+     * crea ventana emergente para las excepciones y errores de la aplicacion
+     *
+     * @param e recoge el error
+     */
+    public void alerta_de_error(String header,Exception e) {
+        Alert errorAlert = new Alert(AlertType.ERROR);
+        errorAlert.setTitle("Error en la Aplicación");
+        errorAlert.setHeaderText(header);
+        errorAlert.setContentText("error: " + e);
+        Stage errores = (Stage) errorAlert.getDialogPane().getScene().getWindow();
+        errores.getIcons().add(new Image(getClass().getResourceAsStream("resources/error_icon.png")));
+        errorAlert.showAndWait();
     }
 
 }

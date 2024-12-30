@@ -39,11 +39,19 @@ public class juegos {
     public void initialize(){
     }
     
-    private Ruleta n;
+    /**
+     Objeto de ruleta.
+     */
+    public Ruleta n;
+    /**
+     metodo para la ruleta.
+     */
     public juegos(){
         n = new Ruleta();
     }
-    
+    /**
+     metodo de ruleta para obtener el juego a jugar
+     */
     @FXML
     public void ruleta() throws IllegalStateException{
         try{  

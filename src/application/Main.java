@@ -55,6 +55,7 @@ public class Main extends Application {
             Rectangle2D screenBounds = Screen.getPrimary().getBounds();
             double screenWidth = screenBounds.getWidth();
             double screenHeight = screenBounds.getHeight();
+            System.out.println(screenWidth +""+ screenHeight);
 
             // Configuración de la ventana principal
             Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));

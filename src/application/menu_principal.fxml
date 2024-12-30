@@ -77,7 +77,7 @@
                            <Insets left="700.0" right="700.0" top="2500.0" />
                         </GridPane.margin>
                      </VBox>
-                       <ImageView fx:id="Techcom" fitHeight="265.0" fitWidth="180.0"  onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT" GridPane.rowSpan="2">
+                       <ImageView fx:id="Techcom" fitHeight="265.0" fitWidth="180.0" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT" GridPane.rowSpan="2">
                           <GridPane.margin>
                              <Insets right="45.0" top="350.0" />
                           </GridPane.margin>
@@ -90,7 +90,7 @@
                                  <Font name="Goudy Stout" size="32.0" />
                               </font>
                            </Text>
-                           <ImageView fx:id="Vision" fitHeight="84.0" fitWidth="120.0"  pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="Vision" fitHeight="84.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@resources/vision.png" />
                               </image>
@@ -115,7 +115,7 @@
                                  <Font name="Goudy Stout" size="32.0" />
                               </font>
                            </Text>
-                           <ImageView fx:id="Mision" fitHeight="84.0" fitWidth="120.0"  pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="Mision" fitHeight="84.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@resources/mision.png" />
                               </image>
@@ -136,23 +136,23 @@
                            <Insets bottom="450.0" left="15.0" right="40.0" top="200.0" />
                         </GridPane.margin>
                      </VBox>
-                     <VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="269.0" prefWidth="499.0" style="-fx-padding: 10; -fx-background-color: #d1d1e9; -fx-background-radius: 15; -fx-border-radius: 15;" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="528.0" prefWidth="711.0" style="-fx-padding: 10; -fx-background-color: #d1d1e9; -fx-background-radius: 15; -fx-border-radius: 15;" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                         <children>
-                           <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black;">
+                           <HBox prefHeight="34.0" prefWidth="209.0" style="-fx-border-color: black;">
                               <children>
-                                 <Text fx:id="inicio_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Danna L.">
+                                 <Text fx:id="inicio_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Danna L." wrappingWidth="161.59375">
                                     <font>
-                                       <Font name="Comic Sans MS" size="22.0" />
+                                       <Font name="Comic Sans MS" size="30.0" />
                                     </font>
                                  </Text>
                               </children>
                               <VBox.margin>
-                                 <Insets bottom="15.0" right="525.0" />
+                                 <Insets bottom="15.0" right="1050.0" />
                               </VBox.margin>
                            </HBox>
-                           <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-radius: 5;">
+                           <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-radius: 5;">
                               <children>
-                                 <ImageView fx:id="Deepfake" fitHeight="236.0" fitWidth="405.0" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                 <ImageView fx:id="Deepfake" fitHeight="970.0" fitWidth="956.0" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true" smooth="false">
                                     <image>
                                        <Image url="@resources/Deepfake.jpg" />
                                     </image>
@@ -170,14 +170,17 @@
                                  <Insets top="10.0" />
                               </VBox.margin>
                            </HBox>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Un deepfake es un video, audio o imagen la cual imita el sonido o la apariencia de una persona. Son ejecutados por medio de la inteligencia artificial. Pero debemos aclarar que no todas las aplicaciones de deepfakes son peligrosas." wrappingWidth="608.642578125">
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Un deepfake es un video, audio o imagen la cual imita el sonido o la apariencia de una persona. Son ejecutados por medio de la inteligencia artificial. Pero debemos aclarar que no todas las aplicaciones de deepfakes son peligrosas." wrappingWidth="1154.642578125">
                               <font>
-                                 <Font name="Calibri" size="20.0" />
+                                 <Font name="Calibri" size="25.0" />
                               </font>
+                              <VBox.margin>
+                                 <Insets top="10.0" />
+                              </VBox.margin>
                            </Text>
                         </children>
                         <GridPane.margin>
-                           <Insets bottom="350.0" left="700.0" right="700.0" top="130.0" />
+                           <Insets bottom="350.0" left="550.0" right="700.0" top="130.0" />
                         </GridPane.margin>
                      </VBox>
                   </children>
@@ -196,36 +199,99 @@
          <Insets />
       </GridPane.margin>
    </ScrollPane>
-   <HBox alignment="TOP_CENTER" fillHeight="false" prefHeight="86.0" prefWidth="1932.0">
+   <HBox fx:id="historias" alignment="TOP_CENTER" fillHeight="false" prefHeight="88.0" prefWidth="714.0" spacing="100.0" style="visibility: true;" styleClass="main-container" stylesheets="@resources/interfaz_principal.css" GridPane.hgrow="ALWAYS" GridPane.valignment="BASELINE" GridPane.vgrow="ALWAYS">
       <GridPane.margin>
-         <Insets bottom="925.0" left="400.0" right="400.0" top="35.0" />
+         <Insets bottom="920.0" left="500.0" right="1000.0" />
       </GridPane.margin>
       <children>
-         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+         <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
             <children>
-               <Circle fx:id="clip" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE" />
+               <Circle fx:id="clip6" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </Circle>
                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
             </children>
             <HBox.margin>
-               <Insets right="1100.0" />
+               <Insets />
             </HBox.margin>
          </VBox>
-         <ImageView fx:id="Delfos" fitHeight="75.0" fitWidth="217.0"  onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true">
+         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <Circle fx:id="clip" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </Circle>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
+            </children>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </VBox>
+         <VBox alignment="TOP_CENTER" layoutX="128.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <Circle fx:id="clip2" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </Circle>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
+            </children>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </VBox>
+         <VBox alignment="TOP_CENTER" layoutX="178.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <Circle fx:id="clip3" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </Circle>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
+            </children>
+         </VBox>
+         <VBox alignment="TOP_CENTER" layoutX="514.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <Circle fx:id="clip4" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </Circle>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
+            </children>
+         </VBox>
+         <VBox alignment="TOP_CENTER" layoutX="178.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <Circle fx:id="clip5" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </Circle>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
+            </children>
+         </VBox>
+         <ImageView fx:id="Delfos" fitHeight="75.0" fitWidth="217.0" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@resources/delfos.png" />
             </image>
             <HBox.margin>
-               <Insets left="180.0" />
+               <Insets left="240.0" />
             </HBox.margin>
          </ImageView>
       </children>
+      <padding>
+         <Insets bottom="10.0" top="15.0" />
+      </padding>
    </HBox>
    <VBox alignment="TOP_CENTER" prefHeight="1018.0" prefWidth="294.0" style="-fx-border-color: black; -fx-border-radius: 16; -fx-border-width: 1;" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
       <GridPane.margin>
          <Insets bottom="10.0" left="65.0" right="1700.0" top="15.0" />
       </GridPane.margin>
       <children>
-         <ImageView fx:id="Deepfake1" fitHeight="79.0" fitWidth="144.0"  onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true">
+         <ImageView fx:id="Deepfake1" fitHeight="79.0" fitWidth="144.0" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@resources/creainess.png" />
             </image>

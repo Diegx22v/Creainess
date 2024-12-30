@@ -8,6 +8,7 @@ import javafx.animation.Animation.Status;
 import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
@@ -21,6 +22,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -126,6 +128,12 @@ public class menu_principal {
     public Button creditos;
 
     
+    /**
+     * Objeto HBox para contener los circulos
+     */
+    @FXML
+    public HBox historias;
+    
     @FXML
     public Circle clip;
     
@@ -166,8 +174,23 @@ public class menu_principal {
         inicializarAnimacion_boton_inicio();
         inicializarAnimacion_boton_creditos();
         inicializarAnimacion_boton_soporte();
+        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+        if (screenBounds.getWidth() != 1920.0 && screenBounds.getHeight() != 1080.0 ) {
+            Insets padding = new Insets(25, 0, 10, 0);
+            historias.setPadding(padding);
+        }
+        
         //inicializarAnimacion_boton_clonacion_de_voz();
         cargar_circulo();
+        cargar_circulo2();
+                cargar_circulo3();
+
+                        cargar_circulo4();
+
+                                cargar_circulo5();
+
+                                        cargar_circulo6();
+
         //inicializarAnimacion_click_jugar();
         //inicializarAnimacion_click_salir();
         //int puntosIniciales = 0;
@@ -200,6 +223,74 @@ public class menu_principal {
         // Aplicar la imagen al círculo como patrón
         clip.setFill(new ImagePattern(image));
     }
+    
+    @FXML
+    public Circle clip2;
+    
+    public void cargar_circulo2(){
+        clip2.setCenterX(150);
+        clip2.setCenterY(150);
+        
+        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
+        
+        clip2.setFill(new ImagePattern(id));
+    }
+    
+    
+    @FXML
+    public Circle clip3;
+    
+    public void cargar_circulo3(){
+        clip3.setCenterX(150);
+        clip3.setCenterY(150);
+        
+        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
+        
+        clip3.setFill(new ImagePattern(id));
+    }
+    
+    
+    @FXML
+    public Circle clip4;
+    
+    public void cargar_circulo4(){
+        clip4.setCenterX(150);
+        clip4.setCenterY(150);
+        
+        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
+        
+        clip4.setFill(new ImagePattern(id));
+    }
+    
+    
+    @FXML
+    public Circle clip5;
+    
+    
+    public void cargar_circulo5(){
+        clip5.setCenterX(150);
+        clip5.setCenterY(150);
+        
+        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
+        
+        clip5.setFill(new ImagePattern(id));
+    }
+    
+    
+    @FXML
+    public Circle clip6;
+    
+    public void cargar_circulo6(){
+        clip6.setCenterX(150);
+        clip6.setCenterY(150);
+        
+        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
+        
+        clip6.setFill(new ImagePattern(id));
+    }
+    
+    
+    
     /**
      * Crea una animacion para el boton clonacion de voz (operativa)
      */

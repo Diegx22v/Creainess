@@ -9,10 +9,24 @@ package Utils;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Clase de utilidades.
+ * @author Diego V., Franklin C., Dayana T., Carlos V., Mia N.
+ * @version 1.0
+ */
 public class Ruleta {
-    private ArrayList<Integer> numeros;
-    private Random aleatorio;
-
+    /**
+ * array para contener numeros
+ */
+    public ArrayList<Integer> numeros;
+    
+        /**
+ * generador de random
+ */
+    public Random aleatorio;
+    /**
+ * constuctor
+ */
     public Ruleta() {
         aleatorio = new Random();
         numeros = new ArrayList<>();
@@ -20,7 +34,12 @@ public class Ruleta {
             numeros.add(i);
         }
     }
-
+    
+    
+    /**
+ * metodo para obtener un numero 
+ * @return numero que representa un numero entre 1 a 4
+ */
     public int obtenerNumero() {
         if (numeros.isEmpty()) {
             throw new IllegalStateException("Se llego al limite de generacion de numeros");

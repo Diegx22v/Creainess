@@ -22,9 +22,9 @@
       </columnConstraints>
    <ScrollPane fx:id="principio" fitToWidth="true" hbarPolicy="NEVER" prefHeight="1018.0" prefWidth="2040.0" vbarPolicy="ALWAYS">
      <content>
-       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1925.0" prefWidth="2023.0">
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="5300.0" prefWidth="2023.0">
             <children>
-               <GridPane alignment="CENTER" layoutX="258.0" layoutY="27.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="2177.0" prefWidth="2038.0" AnchorPane.bottomAnchor="-779.0" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="-248.0" AnchorPane.topAnchor="27.0">
+               <GridPane alignment="CENTER" layoutX="258.0" layoutY="27.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="3500.0" prefWidth="2038.0" AnchorPane.bottomAnchor="-779.0" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="-248.0" AnchorPane.topAnchor="27.0">
                  <rowConstraints>
                    <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                    <RowConstraints minHeight="10.0" percentHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -33,50 +33,6 @@
                    <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
                  </rowConstraints>
                   <children>
-                     <VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="269.0" prefWidth="499.0" style="-fx-padding: 10; -fx-background-color: #d1d1e9; -fx-background-radius: 15; -fx-border-radius: 15;">
-                        <children>
-                           <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black;">
-                              <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Danna L.">
-                                    <font>
-                                       <Font name="Comic Sans MS" size="22.0" />
-                                    </font>
-                                 </Text>
-                              </children>
-                              <VBox.margin>
-                                 <Insets bottom="15.0" right="525.0" />
-                              </VBox.margin>
-                           </HBox>
-                           <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-radius: 5;">
-                              <children>
-                                 <ImageView fx:id="Deepfake2" fitHeight="236.0" fitWidth="405.0" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true" smooth="false">
-                                    <image>
-                                       <Image url="@resources/Deepfake.jpg" />
-                                    </image>
-                                    <HBox.margin>
-                                       <Insets bottom="5.0" top="5.0" />
-                                    </HBox.margin>
-                                 </ImageView>
-                              </children>
-                              <VBox.margin>
-                                 <Insets left="110.0" right="110.0" />
-                              </VBox.margin>
-                           </HBox>
-                           <HBox prefHeight="100.0" prefWidth="200.0">
-                              <VBox.margin>
-                                 <Insets top="10.0" />
-                              </VBox.margin>
-                           </HBox>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Un deepfake es un video, audio o imagen la cual imita el sonido o la apariencia de una persona. Son ejecutados por medio de la inteligencia artificial. Pero debemos aclarar que no todas las aplicaciones de deepfakes son peligrosas." wrappingWidth="608.642578125">
-                              <font>
-                                 <Font name="Calibri" size="20.0" />
-                              </font>
-                           </Text>
-                        </children>
-                        <GridPane.margin>
-                           <Insets left="700.0" right="700.0" top="2500.0" />
-                        </GridPane.margin>
-                     </VBox>
                        <ImageView fx:id="Techcom" fitHeight="265.0" fitWidth="180.0" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT" GridPane.rowSpan="2">
                           <GridPane.margin>
                              <Insets right="45.0" top="350.0" />
@@ -136,51 +92,275 @@
                            <Insets bottom="450.0" left="15.0" right="40.0" top="200.0" />
                         </GridPane.margin>
                      </VBox>
-                     <VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="528.0" prefWidth="711.0" style="-fx-padding: 10; -fx-background-color: #d1d1e9; -fx-background-radius: 15; -fx-border-radius: 15;" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <VBox prefHeight="200.0" prefWidth="100.0" spacing="100.0">
                         <children>
-                           <HBox prefHeight="34.0" prefWidth="209.0" style="-fx-border-color: black;">
+                           <VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="528.0" prefWidth="711.0" style="-fx-padding: 10; -fx-background-color: #d1d1e9; -fx-background-radius: 15; -fx-border-radius: 15;">
                               <children>
-                                 <Text fx:id="inicio_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Danna L." wrappingWidth="161.59375">
+                                 <HBox prefHeight="34.0" prefWidth="209.0" style="-fx-border-color: black;">
+                                    <children>
+                                       <Text fx:id="inicio_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Danna L." wrappingWidth="161.59375">
+                                          <font>
+                                             <Font name="Comic Sans MS" size="30.0" />
+                                          </font>
+                                       </Text>
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets bottom="15.0" right="1050.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-radius: 5;">
+                                    <children>
+                                       <ImageView fx:id="Deepfake" fitHeight="970.0" fitWidth="956.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                          <image>
+                                             <Image url="@resources/Deepfake.jpg" />
+                                          </image>
+                                          <HBox.margin>
+                                             <Insets bottom="5.0" top="5.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets left="110.0" right="110.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Un deepfake es un video, audio o imagen la cual imita el sonido o la apariencia de una persona. Son ejecutados por medio de la inteligencia artificial. Pero debemos aclarar que no todas las aplicaciones de deepfakes son peligrosas." wrappingWidth="1154.642578125">
                                     <font>
-                                       <Font name="Comic Sans MS" size="30.0" />
+                                       <Font name="Calibri" size="25.0" />
                                     </font>
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
                                  </Text>
                               </children>
-                              <VBox.margin>
-                                 <Insets bottom="15.0" right="1050.0" />
-                              </VBox.margin>
-                           </HBox>
-                           <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-radius: 5;">
+                           </VBox>
+                           <VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="528.0" prefWidth="711.0" style="-fx-padding: 10; -fx-background-color: #d1d1e9; -fx-background-radius: 15; -fx-border-radius: 15;">
                               <children>
-                                 <ImageView fx:id="Deepfake" fitHeight="970.0" fitWidth="956.0" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true" smooth="false">
-                                    <image>
-                                       <Image url="@resources/Deepfake.jpg" />
-                                    </image>
-                                    <HBox.margin>
-                                       <Insets bottom="5.0" top="5.0" />
-                                    </HBox.margin>
-                                 </ImageView>
+                                 <HBox prefHeight="34.0" prefWidth="209.0" style="-fx-border-color: black;">
+                                    <children>
+                                       <Text fx:id="inicio_11" strokeType="OUTSIDE" strokeWidth="0.0" text="Danna L." wrappingWidth="161.59375">
+                                          <font>
+                                             <Font name="Comic Sans MS" size="30.0" />
+                                          </font>
+                                       </Text>
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets bottom="15.0" right="1050.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-radius: 5;">
+                                    <children>
+                                       <ImageView fx:id="Deepfake3" fitHeight="970.0" fitWidth="956.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                          <image>
+                                             <Image url="@resources/Deepfake.jpg" />
+                                          </image>
+                                          <HBox.margin>
+                                             <Insets bottom="5.0" top="5.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets left="110.0" right="110.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Un deepfake es un video, audio o imagen la cual imita el sonido o la apariencia de una persona. Son ejecutados por medio de la inteligencia artificial. Pero debemos aclarar que no todas las aplicaciones de deepfakes son peligrosas." wrappingWidth="1154.642578125">
+                                    <font>
+                                       <Font name="Calibri" size="25.0" />
+                                    </font>
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </Text>
                               </children>
-                              <VBox.margin>
-                                 <Insets left="110.0" right="110.0" />
-                              </VBox.margin>
-                           </HBox>
-                           <HBox prefHeight="100.0" prefWidth="200.0">
-                              <VBox.margin>
-                                 <Insets top="10.0" />
-                              </VBox.margin>
-                           </HBox>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Un deepfake es un video, audio o imagen la cual imita el sonido o la apariencia de una persona. Son ejecutados por medio de la inteligencia artificial. Pero debemos aclarar que no todas las aplicaciones de deepfakes son peligrosas." wrappingWidth="1154.642578125">
-                              <font>
-                                 <Font name="Calibri" size="25.0" />
-                              </font>
-                              <VBox.margin>
-                                 <Insets top="10.0" />
-                              </VBox.margin>
-                           </Text>
+                           </VBox>
+                           <VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="528.0" prefWidth="711.0" style="-fx-padding: 10; -fx-background-color: #d1d1e9; -fx-background-radius: 15; -fx-border-radius: 15;">
+                              <children>
+                                 <HBox prefHeight="34.0" prefWidth="209.0" style="-fx-border-color: black;">
+                                    <children>
+                                       <Text fx:id="inicio_12" strokeType="OUTSIDE" strokeWidth="0.0" text="Danna L." wrappingWidth="161.59375">
+                                          <font>
+                                             <Font name="Comic Sans MS" size="30.0" />
+                                          </font>
+                                       </Text>
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets bottom="15.0" right="1050.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-radius: 5;">
+                                    <children>
+                                       <ImageView fx:id="Deepfake2" fitHeight="970.0" fitWidth="956.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                          <image>
+                                             <Image url="@resources/Deepfake.jpg" />
+                                          </image>
+                                          <HBox.margin>
+                                             <Insets bottom="5.0" top="5.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets left="110.0" right="110.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Un deepfake es un video, audio o imagen la cual imita el sonido o la apariencia de una persona. Son ejecutados por medio de la inteligencia artificial. Pero debemos aclarar que no todas las aplicaciones de deepfakes son peligrosas." wrappingWidth="1154.642578125">
+                                    <font>
+                                       <Font name="Calibri" size="25.0" />
+                                    </font>
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </Text>
+                              </children>
+                           </VBox>
+                           <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="1746.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="528.0" prefWidth="711.0" style="-fx-padding: 10; -fx-background-color: #d1d1e9; -fx-background-radius: 15; -fx-border-radius: 15;">
+                              <children>
+                                 <HBox prefHeight="34.0" prefWidth="209.0" style="-fx-border-color: black;">
+                                    <children>
+                                       <Text fx:id="inicio_121" strokeType="OUTSIDE" strokeWidth="0.0" text="Danna L." wrappingWidth="161.59375">
+                                          <font>
+                                             <Font name="Comic Sans MS" size="30.0" />
+                                          </font>
+                                       </Text>
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets bottom="15.0" right="1050.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-radius: 5;">
+                                    <children>
+                                       <ImageView fx:id="Deepfake21" fitHeight="970.0" fitWidth="956.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                          <image>
+                                             <Image url="@resources/Deepfake.jpg" />
+                                          </image>
+                                          <HBox.margin>
+                                             <Insets bottom="5.0" top="5.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets left="110.0" right="110.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Un deepfake es un video, audio o imagen la cual imita el sonido o la apariencia de una persona. Son ejecutados por medio de la inteligencia artificial. Pero debemos aclarar que no todas las aplicaciones de deepfakes son peligrosas." wrappingWidth="1154.642578125">
+                                    <font>
+                                       <Font name="Calibri" size="25.0" />
+                                    </font>
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </Text>
+                              </children>
+                           </VBox>
+                           <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="2614.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="528.0" prefWidth="711.0" style="-fx-padding: 10; -fx-background-color: #d1d1e9; -fx-background-radius: 15; -fx-border-radius: 15;">
+                              <children>
+                                 <HBox prefHeight="34.0" prefWidth="209.0" style="-fx-border-color: black;">
+                                    <children>
+                                       <Text fx:id="inicio_1211" strokeType="OUTSIDE" strokeWidth="0.0" text="Danna L." wrappingWidth="161.59375">
+                                          <font>
+                                             <Font name="Comic Sans MS" size="30.0" />
+                                          </font>
+                                       </Text>
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets bottom="15.0" right="1050.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-radius: 5;">
+                                    <children>
+                                       <ImageView fx:id="Deepfake211" fitHeight="970.0" fitWidth="956.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                          <image>
+                                             <Image url="@resources/Deepfake.jpg" />
+                                          </image>
+                                          <HBox.margin>
+                                             <Insets bottom="5.0" top="5.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets left="110.0" right="110.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Un deepfake es un video, audio o imagen la cual imita el sonido o la apariencia de una persona. Son ejecutados por medio de la inteligencia artificial. Pero debemos aclarar que no todas las aplicaciones de deepfakes son peligrosas." wrappingWidth="1154.642578125">
+                                    <font>
+                                       <Font name="Calibri" size="25.0" />
+                                    </font>
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </Text>
+                              </children>
+                           </VBox>
+                           <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="3482.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="528.0" prefWidth="711.0" style="-fx-padding: 10; -fx-background-color: #d1d1e9; -fx-background-radius: 15; -fx-border-radius: 15;">
+                              <children>
+                                 <HBox prefHeight="34.0" prefWidth="209.0" style="-fx-border-color: black;">
+                                    <children>
+                                       <Text fx:id="inicio_12111" strokeType="OUTSIDE" strokeWidth="0.0" text="Danna L." wrappingWidth="161.59375">
+                                          <font>
+                                             <Font name="Comic Sans MS" size="30.0" />
+                                          </font>
+                                       </Text>
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets bottom="15.0" right="1050.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-radius: 5;">
+                                    <children>
+                                       <ImageView fx:id="Deepfake2111" fitHeight="970.0" fitWidth="956.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                          <image>
+                                             <Image url="@resources/Deepfake.jpg" />
+                                          </image>
+                                          <HBox.margin>
+                                             <Insets bottom="5.0" top="5.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets left="110.0" right="110.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Un deepfake es un video, audio o imagen la cual imita el sonido o la apariencia de una persona. Son ejecutados por medio de la inteligencia artificial. Pero debemos aclarar que no todas las aplicaciones de deepfakes son peligrosas." wrappingWidth="1154.642578125">
+                                    <font>
+                                       <Font name="Calibri" size="25.0" />
+                                    </font>
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </Text>
+                              </children>
+                           </VBox>
                         </children>
                         <GridPane.margin>
-                           <Insets bottom="350.0" left="550.0" right="700.0" top="130.0" />
+                           <Insets bottom="100.0" left="300.0" right="450.0" top="4825.0" />
                         </GridPane.margin>
                      </VBox>
                   </children>
@@ -199,19 +379,19 @@
          <Insets />
       </GridPane.margin>
    </ScrollPane>
-   <HBox fx:id="historias" alignment="TOP_CENTER" fillHeight="false" prefHeight="88.0" prefWidth="714.0" spacing="100.0" style="visibility: true;" styleClass="main-container" stylesheets="@resources/interfaz_principal.css" GridPane.hgrow="ALWAYS" GridPane.valignment="BASELINE" GridPane.vgrow="ALWAYS">
+   <HBox fx:id="historias" alignment="TOP_CENTER" fillHeight="false" prefHeight="88.0" prefWidth="714.0" spacing="80.0" style="visibility: true;" styleClass="main-container" stylesheets="@resources/interfaz_principal.css" GridPane.hgrow="ALWAYS" GridPane.valignment="BASELINE" GridPane.vgrow="ALWAYS">
       <GridPane.margin>
-         <Insets bottom="920.0" left="500.0" right="1000.0" />
+         <Insets bottom="920.0" left="450.0" right="1000.0" />
       </GridPane.margin>
       <children>
          <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
             <children>
-               <Circle fx:id="clip6" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
+               <Circle fx:id="clip1" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
                   <VBox.margin>
                      <Insets />
                   </VBox.margin>
                </Circle>
-               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Deepfake" />
             </children>
             <HBox.margin>
                <Insets />
@@ -219,12 +399,12 @@
          </VBox>
          <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
             <children>
-               <Circle fx:id="clip" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
+               <Circle fx:id="clip2" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
                   <VBox.margin>
                      <Insets />
                   </VBox.margin>
                </Circle>
-               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Usos de Deepfake" />
             </children>
             <HBox.margin>
                <Insets />
@@ -232,12 +412,12 @@
          </VBox>
          <VBox alignment="TOP_CENTER" layoutX="128.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
             <children>
-               <Circle fx:id="clip2" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
+               <Circle fx:id="clip3" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
                   <VBox.margin>
                      <Insets />
                   </VBox.margin>
                </Circle>
-               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Problemas del Deepfake" />
             </children>
             <HBox.margin>
                <Insets />
@@ -245,32 +425,32 @@
          </VBox>
          <VBox alignment="TOP_CENTER" layoutX="178.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
             <children>
-               <Circle fx:id="clip3" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
-                  <VBox.margin>
-                     <Insets />
-                  </VBox.margin>
-               </Circle>
-               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
-            </children>
-         </VBox>
-         <VBox alignment="TOP_CENTER" layoutX="514.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
-            <children>
                <Circle fx:id="clip4" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
                   <VBox.margin>
                      <Insets />
                   </VBox.margin>
                </Circle>
-               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clonación de voz" />
             </children>
          </VBox>
-         <VBox alignment="TOP_CENTER" layoutX="178.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+         <VBox alignment="TOP_CENTER" layoutX="514.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
             <children>
                <Circle fx:id="clip5" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
                   <VBox.margin>
                      <Insets />
                   </VBox.margin>
                </Circle>
-               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Usos de la Clonación de voz" />
+            </children>
+         </VBox>
+         <VBox alignment="TOP_CENTER" layoutX="178.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <Circle fx:id="clip6" fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </Circle>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Problemas de la clonación de voz" />
             </children>
          </VBox>
          <ImageView fx:id="Delfos" fitHeight="75.0" fitWidth="217.0" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true">
@@ -278,7 +458,7 @@
                <Image url="@resources/delfos.png" />
             </image>
             <HBox.margin>
-               <Insets left="240.0" />
+               <Insets left="110.0" right="15.0" />
             </HBox.margin>
          </ImageView>
       </children>

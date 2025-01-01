@@ -135,7 +135,7 @@ public class menu_principal {
     public HBox historias;
     
     @FXML
-    public Circle clip;
+    public Circle clip1;
     
     @FXML
     public ImagePattern ajaj;
@@ -183,14 +183,10 @@ public class menu_principal {
         //inicializarAnimacion_boton_clonacion_de_voz();
         cargar_circulo();
         cargar_circulo2();
-                cargar_circulo3();
-
-                        cargar_circulo4();
-
-                                cargar_circulo5();
-
-                                        cargar_circulo6();
-
+        cargar_circulo3();
+        cargar_circulo4();
+        cargar_circulo5();
+        cargar_circulo6();
         //inicializarAnimacion_click_jugar();
         //inicializarAnimacion_click_salir();
         //int puntosIniciales = 0;
@@ -214,25 +210,24 @@ public class menu_principal {
     
     
     public void cargar_circulo(){
-        clip.setCenterX(150);
-        clip.setCenterY(150);
-
+        clip1.setCenterX(150);
+        clip1.setCenterY(150);
         // Cargar la imagen
-        Image image = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
-
+        Image id = new Image(getClass().getResource("resources\\Deepfake.jpg").toExternalForm());
         // Aplicar la imagen al círculo como patrón
-        clip.setFill(new ImagePattern(image));
+        clip1.setFill(new ImagePattern(id));
     }
-    
     @FXML
     public Circle clip2;
     
     public void cargar_circulo2(){
+        // define X
         clip2.setCenterX(150);
+        // define Y
         clip2.setCenterY(150);
-        
+        // Obtener imagen con los metodos getClass getResource y pasarlo a forma externa
         Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
-        
+        // establecer llenado del circulo por la imagen
         clip2.setFill(new ImagePattern(id));
     }
     
@@ -243,9 +238,7 @@ public class menu_principal {
     public void cargar_circulo3(){
         clip3.setCenterX(150);
         clip3.setCenterY(150);
-        
         Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
-        
         clip3.setFill(new ImagePattern(id));
     }
     
@@ -256,9 +249,7 @@ public class menu_principal {
     public void cargar_circulo4(){
         clip4.setCenterX(150);
         clip4.setCenterY(150);
-        
         Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
-        
         clip4.setFill(new ImagePattern(id));
     }
     
@@ -270,9 +261,7 @@ public class menu_principal {
     public void cargar_circulo5(){
         clip5.setCenterX(150);
         clip5.setCenterY(150);
-        
-        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
-        
+        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());        
         clip5.setFill(new ImagePattern(id));
     }
     
@@ -282,10 +271,8 @@ public class menu_principal {
     
     public void cargar_circulo6(){
         clip6.setCenterX(150);
-        clip6.setCenterY(150);
-        
-        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
-        
+        clip6.setCenterY(150);        
+        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());        
         clip6.setFill(new ImagePattern(id));
     }
     

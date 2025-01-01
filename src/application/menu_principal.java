@@ -111,7 +111,7 @@ public class menu_principal {
     /**
      * Objeto ScaleTransition para el boton de Deepfake
      */
-    public ScaleTransition animacion_de_deepfake;
+    public ScaleTransition animacion_de_inicio;
     /**
      * Objeto ScaleTransition para el boton de clonacion de voz
      */
@@ -174,6 +174,7 @@ public class menu_principal {
         inicializarAnimacion_boton_inicio();
         inicializarAnimacion_boton_creditos();
         inicializarAnimacion_boton_soporte();
+        inicializarAnimacion_boton_salir();
         Rectangle2D screenBounds = Screen.getPrimary().getBounds();
         if (screenBounds.getWidth() != 1920.0 && screenBounds.getHeight() != 1080.0 ) {
             Insets padding = new Insets(25, 0, 10, 0);
@@ -318,18 +319,54 @@ public class menu_principal {
      */
     public void inicializarAnimacion_boton_inicio() {
 
-        animacion_de_deepfake = new ScaleTransition(Duration.millis(150), inicio);
-        animacion_de_deepfake.setByX(0.02);
-        animacion_de_deepfake.setByY(0.02);
-        animacion_de_deepfake.setAutoReverse(true);
-        animacion_de_deepfake.setCycleCount(2);
+        animacion_de_inicio = new ScaleTransition(Duration.millis(150), inicio);
+        animacion_de_inicio.setByX(0.02);
+        animacion_de_inicio.setByY(0.02);
+        animacion_de_inicio.setAutoReverse(true);
+        animacion_de_inicio.setCycleCount(2);
     }
     /**
      * Verificacion de animacion (semi-obsoleta)
      *
      * @param animacion_de_deepfake necesita de un objeto ScaleTransition
      */
-    public void animacion_soft_inicio(ScaleTransition animacion_de_deepfake) {
+    public void animacion_soft_inicio(ScaleTransition animacion_de_inicio) {
+        if (animacion_de_inicio.getStatus() != Status.RUNNING) {
+            animacion_de_inicio.playFromStart();
+        }
+    }
+    /**
+     * ejecucion (handler) de animacion
+     */
+    @FXML
+    public void soft_inicio() {
+        animacion_soft_inicio(animacion_de_inicio);
+    }
+
+    
+    @FXML
+    public Button salir;
+    
+    /**
+     * Crea una animacion para el boton deepfake (operativa)
+     */
+    @FXML
+    public ScaleTransition animacion_de_salir;
+    
+    public void inicializarAnimacion_boton_salir() {
+
+        animacion_de_salir = new ScaleTransition(Duration.millis(150), salir);
+        animacion_de_salir.setByX(0.02);
+        animacion_de_salir.setByY(0.02);
+        animacion_de_salir.setAutoReverse(true);
+        animacion_de_salir.setCycleCount(2);
+    }
+    /**
+     * Verificacion de animacion (semi-obsoleta)
+     *
+     * @param animacion_de_deepfake necesita de un objeto ScaleTransition
+     */
+    public void animacion_soft_salir(ScaleTransition animacion_de_deepfake) {
         if (animacion_de_deepfake.getStatus() != Status.RUNNING) {
             animacion_de_deepfake.playFromStart();
         }
@@ -338,10 +375,14 @@ public class menu_principal {
      * ejecucion (handler) de animacion
      */
     @FXML
-    public void soft_inicio() {
-        animacion_soft_inicio(animacion_de_deepfake);
+    public void soft_salir() {
+        animacion_soft_salir(animacion_de_salir);
     }
 
+    @FXML
+    public void salir(){
+        System.exit(0);
+    }
 
     /**
      * Crea una animacion para el boton creditos (operativa)

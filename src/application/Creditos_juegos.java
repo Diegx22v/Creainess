@@ -39,7 +39,7 @@ import javafx.stage.Screen;
  * @author Diego V.
  * @version 1.1
  */
-public class creditos {
+public class Creditos_juegos {
     /**
      *  Objeto VBox para contener el primer grupo
      */
@@ -159,7 +159,7 @@ public class creditos {
             Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
             primaryStage.getIcons().add(icono);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("menu_principal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("juegos.fxml"));
             GridPane main = loader.load(); // Se asegura de que el GridPane es el nodo raíz
 
             // Crear un grupo para aplicar el escalado al contenido
@@ -184,7 +184,7 @@ public class creditos {
 
             // Configuración del Stage
             primaryStage.setMaximized(true);
-            primaryStage.setTitle("Contribuidores");
+            primaryStage.setTitle("juegos locos franklin");
             primaryStage.setScene(scene);
             primaryStage.show();
 

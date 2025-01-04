@@ -23,6 +23,16 @@ public class juegos {
      */
     @FXML
     public Button jugar;
+    
+    @FXML
+    public Text tittle;
+    
+    @FXML
+    public Text subtittle;
+    
+    @FXML
+    public Text version;
+    
 
     /**
      * Objeto Button para salir del programa
@@ -30,6 +40,8 @@ public class juegos {
     @FXML
     public Button salir;
     
+    @FXML
+    public ImageView gif_ruleta;
     
     /**
       Objeto Button para los creditos
@@ -47,6 +59,8 @@ public class juegos {
      inicializarAnimacion_boton_salir(); 
     }
     
+    
+    
     /**
      Objeto de ruleta.
      */
@@ -57,6 +71,8 @@ public class juegos {
     public juegos(){
         n = new Ruleta();
     }
+    
+    
     /**
      metodo de ruleta para obtener el juego a jugar
      */
@@ -65,9 +81,19 @@ public class juegos {
         try{  
             int numero;
             numero = n.obtenerNumero();
+            Image gif;
             switch (numero) {
                 case 1:
                     System.out.println("primer juego cargado");
+                    tittle.setVisible(false);
+                    subtittle.setVisible(false);
+                    version.setVisible(false);
+                    jugar.setVisible(false);
+                    creditos.setVisible(false);
+                    salir.setVisible(false);
+                    gif = new Image(getClass().getResource("resources/final-01-gifs-new.gif").toExternalForm());
+                    gif_ruleta.setImage(gif);
+                    gif_ruleta.setVisible(true);
                     /**                    
                      * CARGAR VIDEO DE RULETA Y DESAPARECER LOS ELEMENTOS PARA QUE SE QUEDE SOLO LA RULETA Y SU VIDEO
                      * TODA LA LOGICA DEL PRIMER JUEGO 
@@ -81,6 +107,15 @@ public class juegos {
                      * TODA LA LOGICA DEL SEGUNDO JUEGO 
                      * HECHO POR: FRANKLIN C.
                      */ 
+                    tittle.setVisible(false);
+                    subtittle.setVisible(false);
+                    version.setVisible(false);
+                    jugar.setVisible(false);
+                    creditos.setVisible(false);
+                    salir.setVisible(false);
+                    gif = new Image(getClass().getResource("resources/final-01-gifs-new.gif").toExternalForm());
+                    gif_ruleta.setImage(gif);
+                    gif_ruleta.setVisible(true);
                     break;
                 case 3:
                     System.out.println("tercer juego cargado");
@@ -89,6 +124,15 @@ public class juegos {
                     * TODA LA LOGICA DEL TERCER JUEGO 
                     * HECHO POR: FRANKLIN C.
                     */ 
+                    tittle.setVisible(false);
+                    subtittle.setVisible(false);
+                    version.setVisible(false);
+                    jugar.setVisible(false);
+                    creditos.setVisible(false);
+                    salir.setVisible(false);
+                    gif = new Image(getClass().getResource("resources/final-01-gifs-new.gif").toExternalForm());
+                    gif_ruleta.setImage(gif);
+                    gif_ruleta.setVisible(true);
                     break;
                 case 4:
                     /**
@@ -96,6 +140,15 @@ public class juegos {
                     * TODA LA LOGICA DEL CUARTO JUEGO 
                     * HECHO POR: FRANKLIN C.
                     */ 
+                    tittle.setVisible(false);
+                    subtittle.setVisible(false);
+                    version.setVisible(false);
+                    jugar.setVisible(false);
+                    creditos.setVisible(false);
+                    salir.setVisible(false);
+                    gif = new Image(getClass().getResource("resources/final-01-gifs-new.gif").toExternalForm());
+                    gif_ruleta.setImage(gif);
+                    gif_ruleta.setVisible(true);
                     System.out.println("cuarto juego cargado");
                     break;
                 default:

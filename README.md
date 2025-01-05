@@ -1,4 +1,4 @@
-> [!IMPORTANT]
+> [!NOTE]
 > Actualmente usamos el IDE Netbeans 8.1
 
 <h1><b>Bienvenidos al software de Creainess </h1>

@@ -6,6 +6,8 @@ import javafx.stage.Stage;import javafx.util.Duration;
 //import utils.Utils;
 import Utils.Ruleta;
 import java.awt.*;import java.io.IOException;import java.net.URI;import java.net.URISyntaxException;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
@@ -54,7 +56,7 @@ public class juegos {
      */
     @FXML
     public void initialize(){
-     inicializarAnimacion_boton_jugar();  
+     inicializarAnimacion_boton_jugar(); 
      inicializarAnimacion_boton_creditos(); 
      inicializarAnimacion_boton_salir(); 
     }
@@ -65,6 +67,10 @@ public class juegos {
      Objeto de ruleta.
      */
     public Ruleta n;
+    
+    public Ruleta personaje; 
+    
+    
     /**
      metodo para la ruleta.
      */
@@ -77,11 +83,13 @@ public class juegos {
      metodo de ruleta para obtener el juego a jugar
      */
     @FXML
-    public void ruleta() throws IllegalStateException{
+    public void ruleta() throws IllegalStateException, InterruptedException{
         try{  
             int numero;
             numero = n.obtenerNumero();
             Image gif;
+            int gifDuration;
+            Timeline timeline;
             switch (numero) {
                 case 1:
                     System.out.println("primer juego cargado");
@@ -94,6 +102,26 @@ public class juegos {
                     gif = new Image(getClass().getResource("resources/final-01-gifs-new.gif").toExternalForm());
                     gif_ruleta.setImage(gif);
                     gif_ruleta.setVisible(true);
+                    
+                    // Duración del GIF en milisegundos (modifica según tu GIF)
+                    gifDuration = 5000;
+
+                    // Usar un Timeline para restaurar los elementos tras la reproducción del GIF
+                    timeline = new Timeline(new KeyFrame(Duration.millis(gifDuration), e -> {
+                        gif_ruleta.setVisible(false); // Ocultar el GIF
+                        gif_ruleta.setImage(null);   // Opcional: Limpiar referencia al GIF
+            
+                        // Mostrar elementos nuevamente
+                        tittle.setVisible(true);
+                        subtittle.setVisible(true);
+                        version.setVisible(true);
+                        jugar.setVisible(true);
+                        creditos.setVisible(true);
+                        salir.setVisible(true);
+                    }));
+                    timeline.setCycleCount(1); // Ejecutar una sola vez
+                    timeline.play();
+                    
                     /**                    
                      * CARGAR VIDEO DE RULETA Y DESAPARECER LOS ELEMENTOS PARA QUE SE QUEDE SOLO LA RULETA Y SU VIDEO
                      * TODA LA LOGICA DEL PRIMER JUEGO 
@@ -116,6 +144,24 @@ public class juegos {
                     gif = new Image(getClass().getResource("resources/final-01-gifs-new.gif").toExternalForm());
                     gif_ruleta.setImage(gif);
                     gif_ruleta.setVisible(true);
+                    // Duración del GIF en milisegundos (modifica según tu GIF)
+                    gifDuration = 5000;
+
+                    // Usar un Timeline para restaurar los elementos tras la reproducción del GIF
+                    timeline = new Timeline(new KeyFrame(Duration.millis(gifDuration), e -> {
+                        gif_ruleta.setVisible(false); // Ocultar el GIF
+                        gif_ruleta.setImage(null);   // Opcional: Limpiar referencia al GIF
+            
+                        // Mostrar elementos nuevamente
+                        tittle.setVisible(true);
+                        subtittle.setVisible(true);
+                        version.setVisible(true);
+                        jugar.setVisible(true);
+                        creditos.setVisible(true);
+                        salir.setVisible(true);
+                    }));
+                    timeline.setCycleCount(1); // Ejecutar una sola vez
+                    timeline.play();
                     break;
                 case 3:
                     System.out.println("tercer juego cargado");
@@ -133,6 +179,24 @@ public class juegos {
                     gif = new Image(getClass().getResource("resources/final-01-gifs-new.gif").toExternalForm());
                     gif_ruleta.setImage(gif);
                     gif_ruleta.setVisible(true);
+                    // Duración del GIF en milisegundos (modifica según tu GIF)
+                    gifDuration = 5000;
+
+                    // Usar un Timeline para restaurar los elementos tras la reproducción del GIF
+                    timeline = new Timeline(new KeyFrame(Duration.millis(gifDuration), e -> {
+                        gif_ruleta.setVisible(false); // Ocultar el GIF
+                        gif_ruleta.setImage(null);   // Opcional: Limpiar referencia al GIF
+            
+                        // Mostrar elementos nuevamente
+                        tittle.setVisible(true);
+                        subtittle.setVisible(true);
+                        version.setVisible(true);
+                        jugar.setVisible(true);
+                        creditos.setVisible(true);
+                        salir.setVisible(true);
+                    }));
+                    timeline.setCycleCount(1); // Ejecutar una sola vez
+                    timeline.play();
                     break;
                 case 4:
                     /**
@@ -150,6 +214,24 @@ public class juegos {
                     gif_ruleta.setImage(gif);
                     gif_ruleta.setVisible(true);
                     System.out.println("cuarto juego cargado");
+                    // Duración del GIF en milisegundos (modifica según tu GIF)
+                    gifDuration = 5000;
+
+                    // Usar un Timeline para restaurar los elementos tras la reproducción del GIF
+                    timeline = new Timeline(new KeyFrame(Duration.millis(gifDuration), e -> {
+                        gif_ruleta.setVisible(false); // Ocultar el GIF
+                        gif_ruleta.setImage(null);   // Opcional: Limpiar referencia al GIF
+            
+                        // Mostrar elementos nuevamente
+                        tittle.setVisible(true);
+                        subtittle.setVisible(true);
+                        version.setVisible(true);
+                        jugar.setVisible(true);
+                        creditos.setVisible(true);
+                        salir.setVisible(true);
+                    }));
+                    timeline.setCycleCount(1); // Ejecutar una sola vez
+                    timeline.play();
                     break;
                 default:
                     System.out.println("error");

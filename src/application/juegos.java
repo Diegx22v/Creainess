@@ -11,6 +11,7 @@ import javafx.animation.Timeline;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Screen;
 /**
@@ -26,12 +27,23 @@ public class juegos {
     @FXML
     public Button jugar;
     
+    
+    /*
+        Texto de titulo
+    */
     @FXML
     public Text tittle;
     
+    
+    /*
+        Texto de SubTitulo
+    */
     @FXML
     public Text subtittle;
     
+    /*
+        Texto de version (Obsoleto)
+    */
     @FXML
     public Text version;
     
@@ -42,6 +54,10 @@ public class juegos {
     @FXML
     public Button salir;
     
+    
+    /*
+        Imagen / Gif de la ruleta
+    */
     @FXML
     public ImageView gif_ruleta;
     
@@ -59,6 +75,7 @@ public class juegos {
      inicializarAnimacion_boton_jugar(); 
      inicializarAnimacion_boton_creditos(); 
      inicializarAnimacion_boton_salir(); 
+     initialize_animation_return_credits();
     }
     
     
@@ -146,12 +163,10 @@ public class juegos {
                     gif_ruleta.setVisible(true);
                     // Duración del GIF en milisegundos (modifica según tu GIF)
                     gifDuration = 5000;
-
                     // Usar un Timeline para restaurar los elementos tras la reproducción del GIF
                     timeline = new Timeline(new KeyFrame(Duration.millis(gifDuration), e -> {
                         gif_ruleta.setVisible(false); // Ocultar el GIF
                         gif_ruleta.setImage(null);   // Opcional: Limpiar referencia al GIF
-            
                         // Mostrar elementos nuevamente
                         tittle.setVisible(true);
                         subtittle.setVisible(true);
@@ -418,6 +433,117 @@ public class juegos {
             stage.show();
         } catch (Exception e) {
             alerta_de_error("Error de carga",e);
+        }
+    }
+    
+    /*
+        Animacion para la imagen de retorno
+    */
+    @FXML
+    public ScaleTransition credits_return_animation;
+    
+    /*
+        Imagen de retorno
+    */
+    @FXML
+    public ImageView Return_credits;
+    
+    /**
+     * Inicia una animacion
+     */
+    public void initialize_animation_return_credits() {
+
+        credits_return_animation = new ScaleTransition(Duration.millis(150), Return_credits);
+        credits_return_animation.setByX(0.15);
+        credits_return_animation.setByY(0.10);
+        credits_return_animation.setAutoReverse(true);
+        credits_return_animation.setCycleCount(2);
+    }
+
+    /**
+     * verifica la ejecucion de la animacion
+     * @param animacion recoge la animacion
+     */
+    public void animacion_image(ScaleTransition animacion) {
+        if (animacion.getStatus() != Status.RUNNING) {
+            animacion.playFromStart();
+        }
+    }
+
+    /**
+     * Inicia la animacion
+     */
+    @FXML
+   public  void softimage1() {
+        animacion_image(credits_return_animation);
+    }
+
+    /**
+     * Cierra la ventana actual y regresa a la anterior
+     */
+    @FXML
+    public void return_main1() {
+        try {
+            Return_credits.setDisable(true);
+            Stage cerrar = (Stage) Return_credits.getScene().getWindow();
+            cerrar.close();
+                      
+                        Stage primaryStage = new Stage();
+            double baseWidth = 1920;
+            double baseHeight = 1080;
+
+            // Detectar resolución de pantalla
+            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+            double screenWidth = screenBounds.getWidth();
+            double screenHeight = screenBounds.getHeight();
+
+            // Configuración de la ventana principal
+            Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
+            primaryStage.getIcons().add(icono);
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("menu_principal.fxml"));
+            GridPane main = loader.load(); // Se asegura de que el GridPane es el nodo raíz
+
+            // Crear un grupo para aplicar el escalado al contenido
+            Group scalableGroup = new Group(main);
+
+            // Crear una escena con la resolución detectada
+            Scene scene = new Scene(new StackPane(scalableGroup), screenWidth, screenHeight);
+            scene.getStylesheets().add(getClass().getResource("resources/interfaz_principal.css").toExternalForm());
+
+            // Calcular el factor de escalado
+            double scaleX = screenWidth / baseWidth;
+            double scaleY = screenHeight / baseHeight;
+            double scale = Math.min(scaleX, scaleY); // Mantener proporciones
+
+            // Aplicar el escalado
+            scalableGroup.setScaleX(scale);
+            scalableGroup.setScaleY(scale);
+
+            // Centrar el contenido escalado en la ventana
+            StackPane stackPane = (StackPane) scene.getRoot();
+            stackPane.setAlignment(Pos.CENTER);
+
+            // Configuración del Stage
+            primaryStage.setMaximized(true);
+            primaryStage.setTitle("Contribuidores");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+            // Mostrar la nueva ventana
+            cerrar.close();
+        } catch (Exception e) {
+            // ALERTA`
+            Alert errorAlert = new Alert(AlertType.ERROR);
+            errorAlert.setTitle("Error en la Aplicación");
+            errorAlert.setHeaderText("Error en la ejecución");
+            errorAlert.setContentText("error: " + e);
+
+            Stage errores = (Stage) errorAlert.getDialogPane().getScene().getWindow();
+            errores.getIcons().add(new Image(getClass().getResourceAsStream("resources/error_icon.png")));
+            errorAlert.showAndWait();
+        }finally{
+            Return_credits.setDisable(false);
         }
     }
     

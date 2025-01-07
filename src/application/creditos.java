@@ -45,7 +45,9 @@ public class creditos {
      */
     @FXML
     public VBox contenedor_vertical;
-
+/**
+     *  Objeto Text para contener el primer grupo
+     */
     @FXML
     public Text integrantes_d;
     
@@ -61,9 +63,15 @@ public class creditos {
     @FXML
     public VBox Contenedor_vertical_tres;
     
+    /**
+     *  Objeto Text para contener el segundo grupo
+     */
     @FXML
     public Text integrantes_c;
     
+    /**
+     *  Objeto Text para contener los profesores
+     */
     @FXML
     public Text profesores;
 
@@ -78,8 +86,12 @@ public class creditos {
      */
     @FXML
     public ImageView Return_credits;
-
-
+/**
+     *  Objeto Text para contener el tercer grupo
+     */
+    @FXML
+    public Text integrantes_desarrollo;
+    
     /**
      *  Animacion de la imagen de retorno
      */
@@ -94,15 +106,22 @@ public class creditos {
         String texto_d = "* Diego Villota\n"
                 + "* Dayana Torres\n"
                 + "* Carlos Vélez\n"
-                + "* Franklin Chunga\n";
+                + "* Franklin Chunga";
+        
+        String texto_deep =  "* Juan Carlos Flores\n"
+                + "* Kendy Vera\n"
+                + "* Melanyn Triguero\n"
+                + "* Benjamin Rodriguez";
+        
         String texto_c = "* Danna Lopez\n"
                 + "* Felix Mendoza\n"
                 + "* Daniela Marcillo\n"
-                + "* Valeria Arias\n";
+                + "* Valeria Arias";
         String texto_p = "* Lcda. Maria Fernanda Lavaye\n"
                 + "* Lcdo. Anthony Sotomayor";
-        integrantes_d.setText(texto_d);
+        integrantes_desarrollo.setText(texto_d);
         integrantes_c.setText(texto_c);
+        integrantes_d.setText(texto_deep);
         profesores.setText(texto_p);
                 }
 

@@ -6,6 +6,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import javafx.animation.Animation.Status;
 import javafx.animation.ScaleTransition;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -49,7 +50,10 @@ public class menu_principal {
     @FXML
     public ImageView Techcom;
     
-        @FXML
+    /*
+        Boton para dirigirse a soporte
+    */
+    @FXML
     public Button soporte;
 
 
@@ -134,8 +138,12 @@ public class menu_principal {
     @FXML
     public HBox historias;
     
+    /*
+        Circulo 1
+    */
     @FXML
     public Circle clip1;
+    
     
     @FXML
     public ImagePattern ajaj;
@@ -146,15 +154,87 @@ public class menu_principal {
     @FXML
     public Button inicio;
     
+    /*
+        VBOX de anclaje
+    */
+    @FXML
+    public VBox inicio_uno;
+    
+     /*
+        VBOX de anclaje
+    */
+    @FXML
+    public VBox inicio_dos;
+    
+     /*
+        VBOX de anclaje
+    */
+    @FXML
+    public VBox inicio_tres;
+    
+     /*
+        VBOX de anclaje
+    */
+    @FXML
+    public VBox inicio_cuatro;
+    
+     /*
+        VBOX de anclaje
+    */
+    @FXML
+    public VBox inicio_cinco;
+    
+     /*
+        VBOX de anclaje
+    */
+    @FXML
+    public VBox inicio_seis;
+    
+    
+      /*
+        Texto de anclaje
+    */
     @FXML
     public Text inicio_1;
+    
+     /*
+        Texto de anclaje
+    */
+    @FXML
+    public Text inicio_2;
+    
+     /*
+        Texto de anclaje
+    */
+    @FXML
+    public Text inicio_3;
+    
+     /*
+        Texto de anclaje
+    */
+    @FXML
+    public Text inicio_4;
+    
+     /*
+        Texto de anclaje
+    */
+    @FXML
+    public Text inicio_5;
+    
+     /*
+        Texto de anclaje
+    */
+    @FXML
+    public Text inicio_6;
 
     /**
      * Objeto Button para la ventana de Clonacion de voz
      */
     @FXML
     public Button clonacion_de_voz;
-    
+    /*
+        Contenedor secundario
+    */
     @FXML 
     public ScrollPane principio;
 
@@ -194,86 +274,238 @@ public class menu_principal {
         //puntos.setText("Puntos: " + puntosIniciales);
     }
 
-
+    /*
+        Regresa al punto inicial del programa
+    */
     @FXML
     public void regreso(){
-        double targetY = inicio_1.getBoundsInParent().getMinY();
+         Platform.runLater(() -> {
+        // Obtén la posición del nodo inicio_6 relativo al VBox (anclaje)
+        double targetY = inicio_uno.getBoundsInParent().getMinY();
 
-        // Obtén la altura total del contenido en el VBox
-        double totalHeight = principio.getBoundsInLocal().getHeight();
+        // Obtén la altura total del VBox (contenido del ScrollPane)
+        double totalHeight = principio.getContent().getBoundsInLocal().getHeight() - 1000;
 
-        // Ajusta el valor de desplazamiento vertical
-        principio.setVvalue(targetY / totalHeight);
+        // Calcula el valor relativo para el desplazamiento
+        double vvalue = targetY / (totalHeight - principio.getViewportBounds().getHeight());
+
+        // Ajusta el desplazamiento para que esté entre 0 y 1
+        principio.setVvalue(Math.max(0, Math.min(1, vvalue)));
+    });
 
  
     
     }
+
+
+  /*
+        Regresa a la segunda publicacion  del programa
+    */
+    @FXML
+    public void regreso_dos(){
+         Platform.runLater(() -> {
+        // Obtén la posición del nodo inicio_6 relativo al VBox (anclaje)
+        double targetY = inicio_dos.getBoundsInParent().getMinY();
+
+        // Obtén la altura total del VBox (contenido del ScrollPane)
+        double totalHeight = principio.getContent().getBoundsInLocal().getHeight() - 1000;
+
+        // Calcula el valor relativo para el desplazamiento
+        double vvalue = targetY / (totalHeight - principio.getViewportBounds().getHeight());
+
+        // Ajusta el desplazamiento para que esté entre 0 y 1
+        principio.setVvalue(Math.max(0, Math.min(1, vvalue)));
+    });
+ 
+    
+    }    
     
     
+     /*
+        Regresa a la tercera publicacion  del programa
+    */
+    @FXML
+    public void regreso_tres(){
+         Platform.runLater(() -> {
+        // Obtén la posición del nodo inicio_6 relativo al VBox (anclaje)
+        double targetY = inicio_tres.getBoundsInParent().getMinY();
+
+        // Obtén la altura total del VBox (contenido del ScrollPane)
+        double totalHeight = principio.getContent().getBoundsInLocal().getHeight() - 900;
+
+        // Calcula el valor relativo para el desplazamiento
+        double vvalue = targetY / (totalHeight - principio.getViewportBounds().getHeight());
+
+        // Ajusta el desplazamiento para que esté entre 0 y 1
+        principio.setVvalue(Math.max(0, Math.min(1, vvalue)));
+    });
+ 
+    
+    }    
+    
+    
+     /*
+        Regresa a la cuarta publicacion  del programa
+    */
+    @FXML
+    public void regreso_cuatro(){
+         Platform.runLater(() -> {
+        // Obtén la posición del nodo inicio_6 relativo al VBox (anclaje)
+        double targetY = inicio_cuatro.getBoundsInParent().getMinY();
+
+        // Obtén la altura total del VBox (contenido del ScrollPane)
+        double totalHeight = principio.getContent().getBoundsInLocal().getHeight() - 800;
+
+        // Calcula el valor relativo para el desplazamiento
+        double vvalue = targetY / (totalHeight - principio.getViewportBounds().getHeight());
+
+        // Ajusta el desplazamiento para que esté entre 0 y 1
+        principio.setVvalue(Math.max(0, Math.min(1, vvalue)));
+    });
+ 
+    
+    }    
+    
+     /*
+        Regresa a la quinta publicacion  del programa
+    */
+    @FXML
+    public void regreso_cinco(){
+        Platform.runLater(() -> {
+        // Obtén la posición del nodo inicio_6 relativo al VBox (anclaje)
+        double targetY = inicio_cinco.getBoundsInParent().getMinY();
+
+        // Obtén la altura total del VBox (contenido del ScrollPane)
+        double totalHeight = principio.getContent().getBoundsInLocal().getHeight() - 800;
+
+        // Calcula el valor relativo para el desplazamiento
+        double vvalue = targetY / (totalHeight - principio.getViewportBounds().getHeight());
+
+        // Ajusta el desplazamiento para que esté entre 0 y 1
+        principio.setVvalue(Math.max(0, Math.min(1, vvalue)));
+    });
+
+ 
+    
+    }    
+    
+     /*
+        Regresa a la sexta publicacion  del programa
+    */
+    @FXML
+    public void regreso_seis(){
+        Platform.runLater(() -> {
+        // Obtén la posición del nodo inicio_6 relativo al VBox (anclaje)
+        double targetY = inicio_seis.getBoundsInParent().getMinY();
+
+        // Obtén la altura total del VBox (contenido del ScrollPane)
+        double totalHeight = principio.getContent().getBoundsInLocal().getHeight() - 1000;
+
+        // Calcula el valor relativo para el desplazamiento
+        double vvalue = targetY / (totalHeight - principio.getViewportBounds().getHeight());
+
+        // Ajusta el desplazamiento para que esté entre 0 y 1
+        principio.setVvalue(Math.max(0, Math.min(1, vvalue)));
+    });
+        
+    }    
+    
+    
+    
+    
+    /*
+        Primer circulo para contener imagen
+    */
     public void cargar_circulo(){
         clip1.setCenterX(150);
         clip1.setCenterY(150);
         // Cargar la imagen
-        Image id = new Image(getClass().getResource("resources\\Deepfake.jpg").toExternalForm());
+        Image id = new Image(getClass().getResource("resources\\circulo_uno.jpg").toExternalForm());
         // Aplicar la imagen al círculo como patrón
         clip1.setFill(new ImagePattern(id));
     }
+    
+    /*
+        Segundo circulo para contener imagen
+    */
     @FXML
     public Circle clip2;
     
+    /*
+        Segundo circulo para contener imagen
+    */
     public void cargar_circulo2(){
         // define X
         clip2.setCenterX(150);
         // define Y
         clip2.setCenterY(150);
         // Obtener imagen con los metodos getClass getResource y pasarlo a forma externa
-        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
+        Image id = new Image(getClass().getResource("resources/circulo_dos.jpg").toExternalForm());
         // establecer llenado del circulo por la imagen
         clip2.setFill(new ImagePattern(id));
     }
     
-    
+    /*
+        Tercer circulo para contener imagen
+    */
     @FXML
     public Circle clip3;
     
+     /*
+        Tercer circulo para contener imagen
+    */
     public void cargar_circulo3(){
         clip3.setCenterX(150);
         clip3.setCenterY(150);
-        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
+        Image id = new Image(getClass().getResource("resources/circulo_tres.jpg").toExternalForm());
         clip3.setFill(new ImagePattern(id));
     }
     
-    
+     /*
+        Cuarto circulo para contener imagen
+    */
     @FXML
     public Circle clip4;
     
+     /*
+        Cuarto circulo para contener imagen
+    */
     public void cargar_circulo4(){
         clip4.setCenterX(150);
         clip4.setCenterY(150);
-        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());
+        Image id = new Image(getClass().getResource("resources/circulo_cuatro.jpg").toExternalForm());
         clip4.setFill(new ImagePattern(id));
     }
     
-    
+     /*
+        Quinto circulo para contener imagen
+    */
     @FXML
     public Circle clip5;
     
-    
+     /*
+        Quinto circulo para contener imagen
+    */
     public void cargar_circulo5(){
         clip5.setCenterX(150);
         clip5.setCenterY(150);
-        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());        
+        Image id = new Image(getClass().getResource("resources/circulo_cinco.jpg").toExternalForm());        
         clip5.setFill(new ImagePattern(id));
     }
     
-    
+     /*
+        Sexto circulo para contener imagen
+    */
     @FXML
     public Circle clip6;
     
+     /*
+        Sexto circulo para contener imagen
+    */
     public void cargar_circulo6(){
         clip6.setCenterX(150);
         clip6.setCenterY(150);        
-        Image id = new Image(getClass().getResource("resources/TECHCOM.png").toExternalForm());        
+        Image id = new Image(getClass().getResource("resources/circulo_seis.jpg").toExternalForm());        
         clip6.setFill(new ImagePattern(id));
     }
     
@@ -379,6 +611,9 @@ public class menu_principal {
         animacion_soft_salir(animacion_de_salir);
     }
 
+    /*
+        Funcion para salir del programa
+    */
     @FXML
     public void salir(){
         System.exit(0);
@@ -552,12 +787,31 @@ public class menu_principal {
         System.exit(0);
     }
 
+    
+        /**
+     * Reproduce un sonido
+     */
+    private MediaPlayer s_creditos;
+
+           
+    
+    
     /**
      * Crea una ventana para creditos
      */
     @FXML
     public void ventana_creditos() {
         try {
+            
+             if (s_creditos == null) {
+                String audio = getClass().getResource("resources/menciones.mp3").toExternalForm();
+                Media sound = new Media(audio);
+                s_creditos = new MediaPlayer(sound);
+            }
+            s_creditos.stop();
+            s_creditos.play();
+            
+            
             Stage stage = (Stage) creditos.getScene().getWindow();
             stage.close();
             double baseWidth = 1920;
@@ -605,12 +859,25 @@ public class menu_principal {
         }
     }
 
+        /**
+     * Reproduce un sonido
+     */
+    private MediaPlayer s_juegos;
+
+    
     /**
-     * Plantilla de creacion de ventanas
+     * Crea una ventana para los juegos
      */
     @FXML
     public void ventana_juegos() {
         try {
+             if (s_juegos == null) {
+                String audio = getClass().getResource("resources/juegos.mp3").toExternalForm();
+                Media sound = new Media(audio);
+                s_juegos = new MediaPlayer(sound);
+            }
+            s_juegos.stop();
+            s_juegos.play();
             //animacion_image(animacionTechcom);
             Stage stage = (Stage) creditos.getScene().getWindow();
             stage.close();

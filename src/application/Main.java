@@ -61,7 +61,7 @@ public class Main extends Application {
             Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
             primaryStage.getIcons().add(icono);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("menu_principal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/menu_principal.fxml"));
             GridPane main = loader.load(); // Se asegura de que el GridPane es el nodo raíz
 
             // Crear un grupo para aplicar el escalado al contenido

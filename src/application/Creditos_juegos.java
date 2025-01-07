@@ -45,7 +45,9 @@ public class Creditos_juegos {
      */
     @FXML
     public VBox contenedor_vertical;
-
+ /**
+     *  Objeto Text para contener el primer grupo
+     */
     @FXML
     public Text integrantes_d;
     
@@ -61,9 +63,14 @@ public class Creditos_juegos {
     @FXML
     public VBox Contenedor_vertical_tres;
     
+     /**
+     *  Objeto Text para contener el segundo grupo
+     */
     @FXML
     public Text integrantes_c;
-    
+     /**
+     *  Objeto Text para contener los profesores
+     */
     @FXML
     public Text profesores;
 

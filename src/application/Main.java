@@ -91,6 +91,7 @@ public class Main extends Application {
             primaryStage.show();
         } catch (Exception e) {
             // Manejo de errores con una alerta
+            e.printStackTrace();
             Alert errorAlert = new Alert(AlertType.ERROR);
             errorAlert.setTitle("Error en la Aplicación");
             errorAlert.setHeaderText("Error en la ejecución");

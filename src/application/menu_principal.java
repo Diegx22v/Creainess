@@ -420,7 +420,7 @@ public class menu_principal {
         clip1.setCenterX(150);
         clip1.setCenterY(150);
         // Cargar la imagen
-        Image id = new Image(getClass().getResource("resources\\circulo_uno.jpg").toExternalForm());
+        Image id = new Image(getClass().getResource("resources/circulo_uno.jpg").toExternalForm());
         // Aplicar la imagen al círculo como patrón
         clip1.setFill(new ImagePattern(id));
     }

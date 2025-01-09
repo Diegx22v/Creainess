@@ -99,6 +99,9 @@ public class juegos {
     /**
      metodo de ruleta para obtener el juego a jugar
      */
+    /**
+     metodo de ruleta para obtener el juego a jugar
+     */
     @FXML
     public void ruleta() throws IllegalStateException, InterruptedException{
         try{  
@@ -116,7 +119,7 @@ public class juegos {
                     jugar.setVisible(false);
                     creditos.setVisible(false);
                     salir.setVisible(false);
-                    gif = new Image(getClass().getResource("resources/final-01-gifs-new.gif").toExternalForm());
+                    gif = new Image(getClass().getResource("resources/animacion.gif").toExternalForm());
                     gif_ruleta.setImage(gif);
                     gif_ruleta.setVisible(true);
                     
@@ -158,7 +161,7 @@ public class juegos {
                     jugar.setVisible(false);
                     creditos.setVisible(false);
                     salir.setVisible(false);
-                    gif = new Image(getClass().getResource("resources/final-01-gifs-new.gif").toExternalForm());
+                    gif = new Image(getClass().getResource("resources/animacion.gif").toExternalForm());
                     gif_ruleta.setImage(gif);
                     gif_ruleta.setVisible(true);
                     // Duración del GIF en milisegundos (modifica según tu GIF)
@@ -191,7 +194,7 @@ public class juegos {
                     jugar.setVisible(false);
                     creditos.setVisible(false);
                     salir.setVisible(false);
-                    gif = new Image(getClass().getResource("resources/final-01-gifs-new.gif").toExternalForm());
+                    gif = new Image(getClass().getResource("resources/animacion.gif").toExternalForm());
                     gif_ruleta.setImage(gif);
                     gif_ruleta.setVisible(true);
                     // Duración del GIF en milisegundos (modifica según tu GIF)
@@ -225,7 +228,7 @@ public class juegos {
                     jugar.setVisible(false);
                     creditos.setVisible(false);
                     salir.setVisible(false);
-                    gif = new Image(getClass().getResource("resources/final-01-gifs-new.gif").toExternalForm());
+                    gif = new Image(getClass().getResource("resources/animacion.gif").toExternalForm());
                     gif_ruleta.setImage(gif);
                     gif_ruleta.setVisible(true);
                     System.out.println("cuarto juego cargado");
@@ -255,6 +258,52 @@ public class juegos {
             alerta_de_error("Cantidad de juegos excedida",e);
             Stage stage = (Stage) salir.getScene().getWindow();
             stage.close();
+        }
+        try {
+            Stage MYstage = (Stage) jugar.getScene().getWindow();
+            MYstage.close();
+            double baseWidth = 1920;
+            double baseHeight = 1080;
+
+            // Detectar resolución de pantalla
+            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+            double screenWidth = screenBounds.getWidth();
+            double screenHeight = screenBounds.getHeight();
+
+            // Configuración de la ventana principal
+            Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
+            MYstage.getIcons().add(icono);
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("feedback.fxml"));
+            //GridPane main = loader.load(); // Se asegura de que el GridPane es el nodo raíz
+            javafx.scene.control.ScrollPane main = loader.load();
+            // Crear un grupo para aplicar el escalado al contenido
+            Group scalableGroup = new Group(main);
+
+            // Crear una escena con la resolución detectada
+            Scene scene = new Scene(new StackPane(scalableGroup), screenWidth, screenHeight);
+            scene.getStylesheets().add(getClass().getResource("resources/interfaz_principal.css").toExternalForm());
+
+            // Calcular el factor de escalado
+            double scaleX = screenWidth / baseWidth;
+            double scaleY = screenHeight / baseHeight;
+            double scale = Math.min(scaleX, scaleY); // Mantener proporciones
+
+            // Aplicar el escalado
+            scalableGroup.setScaleX(scale);
+            scalableGroup.setScaleY(scale);
+
+            // Centrar el contenido escalado en la ventana
+            StackPane stackPane = (StackPane) scene.getRoot();
+            stackPane.setAlignment(Pos.CENTER);
+
+            // Configuración del Stage
+            MYstage.setMaximized(true);
+            MYstage.setTitle("TECHCON");
+            MYstage.setScene(scene);
+            MYstage.show();
+        } catch (Exception e) {
+            alerta_de_error("Error de carga",e);
         }
     }
     

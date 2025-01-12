@@ -15,6 +15,10 @@ import java.util.Random;
  * @version 1.0
  */
 public class Ruleta {
+    
+        private int numerosGenerados = 0;
+
+    
     /**
  * array para contener numeros
  */
@@ -27,10 +31,13 @@ public class Ruleta {
     /**
  * constuctor
  */
+    
+    public static final int maximo = 5;
+    
     public Ruleta() {
         aleatorio = new Random();
         numeros = new ArrayList<>();
-        for (int i = 1; i <= 4; i++) {
+        for (int i = 1; i <= 20; i++) {
             numeros.add(i);
         }
     }
@@ -41,12 +48,16 @@ public class Ruleta {
  * @return numero que representa un numero entre 1 a 4
  */
     public int obtenerNumero() {
+        if (numerosGenerados >= maximo) {
+            throw new IllegalStateException("Se llegó al límite de 5 números generados");
+        }
         if (numeros.isEmpty()) {
-            throw new IllegalStateException("Se llego al limite de generacion de numeros");
+            throw new IllegalStateException("No quedan números disponibles");
         }
         int indice = aleatorio.nextInt(numeros.size());
         int numero = numeros.get(indice);
         numeros.remove(indice);
+        numerosGenerados++;
         return numero;
     }
     

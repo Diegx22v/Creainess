@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -28,7 +27,7 @@
             </image>
          </ImageView>
 
-            <Text fx:id="tittle" text="juegos locos franklin" wrappingWidth="958.2000122070312" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+            <Text fx:id="tittle" wrappingWidth="958.2000122070312" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">
                 <font>
                     <Font size="100.0" />
                 </font>
@@ -72,41 +71,29 @@
                <Insets bottom="20.0" top="25.0" />
             </GridPane.margin>
          </Text>
-         <Button fx:id="creditos" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ventana_creditos" onMouseEntered="#soft_creditos" prefHeight="84.0" prefWidth="560.0" style="-fx-background-color: c6bafe;" text="Creditos" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <Button fx:id="creditos" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ventana_creditos" onMouseEntered="#soft_creditos" prefHeight="84.0" prefWidth="560.0" style="-fx-background-color: gray;" text="Creditos" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
             <font>
                <Font name="SansSerif Regular" size="40.0" />
             </font>
-            <effect>
-               <DropShadow blurType="ONE_PASS_BOX" height="38.59" radius="14.3975" spread="0.4">
-                  <color>
-                     <Color red="0.5598683953285217" blue="0.9078947305679321" />
-                  </color>
-               </DropShadow>
-            </effect>
          </Button>
-         <Button fx:id="salir" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#salir" onMouseEntered="#soft_salir" prefHeight="84.0" prefWidth="560.0" style="-fx-background-color: c6bafe;" text="Salir" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+         <Button fx:id="salir" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#salir" onMouseEntered="#soft_salir" prefHeight="84.0" prefWidth="560.0" style="-fx-background-color: gray;" text="Salir" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
             <font>
                <Font name="SansSerif Regular" size="40.0" />
             </font>
-            <effect>
-               <DropShadow blurType="ONE_PASS_BOX" height="38.59" radius="14.3975" spread="0.4">
-                  <color>
-                     <Color red="0.5598683953285217" blue="0.9078947305679321" />
-                  </color>
-               </DropShadow>
-            </effect>
+            <GridPane.margin>
+               <Insets bottom="100.0" />
+            </GridPane.margin>
          </Button>
-         <Button fx:id="jugar" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ruleta" onMouseEntered="#soft_jugar" prefHeight="84.0" prefWidth="560.0" style="-fx-background-color: c6bafe;" text="Jugar" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <Button fx:id="jugar" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ruleta" onMouseEntered="#soft_jugar" prefHeight="84.0" prefWidth="560.0" style="-fx-background-color: gray;" text="Jugar" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
             <font>
                <Font name="SansSerif Regular" size="40.0" />
             </font>
-            <effect>
-               <DropShadow blurType="ONE_PASS_BOX" height="38.59" radius="14.3975" spread="0.4">
-                  <color>
-                     <Color red="0.5598683953285217" blue="0.9078947305679321" />
-                  </color>
-               </DropShadow>
-            </effect>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <GridPane.margin>
+               <Insets top="100.0" />
+            </GridPane.margin>
          </Button>
             <rowConstraints>
                 <RowConstraints percentHeight="15.0" valignment="CENTER" vgrow="SOMETIMES" />

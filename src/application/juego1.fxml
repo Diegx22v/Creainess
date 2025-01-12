@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Juego1">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1092.0" prefWidth="1920.0">
+         <children>
+            <Text fx:id="pT" layoutX="1392.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1000" textAlignment="CENTER" wrappingWidth="490.13671875">
+               <font>
+                  <Font size="60.0" />
+               </font>
+            </Text>
+            <VBox layoutX="604.0" layoutY="475.0" prefHeight="600.0" prefWidth="724.0" spacing="50.0">
+               <children>
+                  <Button fx:id="cB" layoutX="5.0" mnemonicParsing="false" onMouseClicked="#click1" prefHeight="233.0" prefWidth="724.0" style="-fx-border-color: gold; -fx-border-radius: 50; -fx-background-radius: 56; -fx-border-width: 10;">
+                     <font>
+                        <Font size="60.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="dB" mnemonicParsing="false" onMouseClicked="#click2" prefHeight="233.0" prefWidth="724.0" style="-fx-border-color: gold; -fx-border-radius: 50; -fx-background-radius: 56; -fx-border-width: 10;">
+                     <font>
+                        <Font size="60.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="eB" mnemonicParsing="false" onMouseClicked="#click3" prefHeight="233.0" prefWidth="724.0" style="-fx-border-color: gold; -fx-border-radius: 50; -fx-background-radius: 56; -fx-border-width: 10;">
+                     <font>
+                        <Font size="60.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </VBox>
+            <Pane layoutX="434.0" layoutY="24.0" prefHeight="436.0" prefWidth="1048.0" style="-fx-background-color: skyblue; -fx-border-width: 31; -fx-border-color: gold; -fx-border-style: dashed; -fx-border-radius: 60; -fx-background-radius: 76;">
+               <children>
+                  <Text fx:id="fT" layoutX="151.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="758.13671875">
+                     <font>
+                        <Font size="96.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

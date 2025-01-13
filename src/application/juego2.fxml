@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Juego2">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1092.0" prefWidth="1920.0">
+         <children>
+            <Button fx:id="quitarp" layoutX="69.0" layoutY="462.0" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#quitarpu" prefHeight="187.0" prefWidth="187.0" style="-fx-border-color: gray; -fx-border-radius: 30; -fx-background-radius: 30; -fx-border-width: 2; -fx-background-color: white;">
+               <font>
+                  <Font size="60.0" />
+               </font>
+               <effect>
+                  <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
+               </effect>
+               <graphic>
+                  <ImageView fitHeight="114.0" fitWidth="152.0">
+                     <image>
+                        <Image url="@resources/borreador_aholla.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Text layoutX="87.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORRADOR" wrappingWidth="156.13671875">
+               <font>
+                  <Font name="Consolas" size="35.0" />
+               </font>
+            </Text>
+            <Text fill="#616161" layoutX="107.0" layoutY="726.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-50 pts" wrappingWidth="113.13671875">
+               <font>
+                  <Font name="Consolas" size="29.0" />
+               </font>
+            </Text>
+            <Pane layoutX="-1.0" prefHeight="90.0" prefWidth="2011.0" style="-fx-background-color: black;">
+               <children>
+                  <Text fx:id="pT" fill="WHITE" layoutX="503.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" textAlignment="CENTER" wrappingWidth="155.47015380859375">
+                     <font>
+                        <Font name="Consolas" size="48.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="intentoss" fill="WHITE" layoutX="1274.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0/0" textAlignment="CENTER" wrappingWidth="96.8033447265625">
+                     <font>
+                        <Font name="Consolas" size="48.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="timer" fill="WHITE" layoutX="818.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00" textAlignment="CENTER" wrappingWidth="251.47015380859375">
+                     <font>
+                        <Font name="Consolas" size="48.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <VBox layoutX="619.0" layoutY="668.0" prefHeight="200.0" prefWidth="629.0" spacing="30.0">
+               <children>
+                  <Button layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click1" prefHeight="90.0" prefWidth="619.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;" text="12345" fx:id="xB">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="yB" layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click2" prefHeight="90.0" prefWidth="619.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="zB" layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click3" prefHeight="90.0" prefWidth="619.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
+                     </effect>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </VBox>
+            <Pane layoutX="471.0" layoutY="154.0" prefHeight="436.0" prefWidth="919.0" style="-fx-background-color: white; -fx-border-width: 2; -fx-border-color: gray; -fx-border-radius: 60; -fx-background-radius: 60;">
+               <children>
+                  <Text fx:id="lT" layoutX="229.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="475.469970703125">
+                     <font>
+                        <Font name="Arial" size="37.0" />
+                     </font>
+                  </Text>
+               </children>
+               <effect>
+                  <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
+               </effect>
+            </Pane>
+            <Pane fx:id="popup" layoutX="469.0" layoutY="2.0" opacity="0.93" prefHeight="1080.0" prefWidth="926.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-width: 3; -fx-border-radius: 100; -fx-background-radius: 100;">
+               <children>
+                  <Button layoutX="101.0" layoutY="778.0" mnemonicParsing="false" onMouseClicked="#quitar" prefHeight="233.0" prefWidth="724.0" style="-fx-border-color: gray; -fx-border-radius: 50; -fx-background-radius: 56; -fx-border-width: 3;" text="Empezar" textAlignment="CENTER">
+                     <font>
+                        <Font size="96.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="-2.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reglas" textAlignment="CENTER" wrappingWidth="926.0">
+                     <font>
+                        <Font size="100.0" />
+                     </font>
+                  </Text>
+                  <Text layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="926.0">
+                     <font>
+                        <Font size="65.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="3.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Se puede jugar en grupo" textAlignment="CENTER" wrappingWidth="926.0">
+                     <font>
+                        <Font size="65.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="4.0" layoutY="620.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-No se puede buscar las respuestas en el celular" textAlignment="CENTER" wrappingWidth="926.0">
+                     <font>
+                        <Font size="65.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

@@ -50,7 +50,7 @@ public class FeedbackController {
             Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
             stage.getIcons().add(icono);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("juego1.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("juegos.fxml"));
             //GridPane main = loader.load(); // Se asegura de que el GridPane es el nodo raíz
             javafx.scene.control.ScrollPane main = loader.load();
             // Crear un grupo para aplicar el escalado al contenido

@@ -2,6 +2,7 @@ package application;
 
 import java.awt.Desktop;
 import java.io.IOException;
+import static java.lang.Thread.sleep;
 import java.net.URI;
 import java.net.URISyntaxException;
 import javafx.animation.Animation.Status;
@@ -869,62 +870,55 @@ public class menu_principal {
      * Crea una ventana para los juegos
      */
     @FXML
-    public void ventana_juegos() {
-        try {
-             if (s_juegos == null) {
-                String audio = getClass().getResource("resources/juegos.mp3").toExternalForm();
-                Media sound = new Media(audio);
-                s_juegos = new MediaPlayer(sound);
-            }
-            s_juegos.stop();
-            s_juegos.play();
-            //animacion_image(animacionTechcom);
-            Stage stage = (Stage) creditos.getScene().getWindow();
-            stage.close();
-            double baseWidth = 1920;
-            double baseHeight = 1080;
+public void ventana_juegos() throws IllegalStateException, InterruptedException {
+    try {
+        Stage stage = (Stage) creditos.getScene().getWindow();
+        stage.close();
+        double baseWidth = 1920;
+        double baseHeight = 1080;
 
-            // Detectar resolución de pantalla
-            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-            double screenWidth = screenBounds.getWidth();
-            double screenHeight = screenBounds.getHeight();
+        // Detectar resolución de pantalla
+        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+        double screenWidth = screenBounds.getWidth();
+        double screenHeight = screenBounds.getHeight();
 
-            // Configuración de la ventana principal
-            Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
-            stage.getIcons().add(icono);
+        // Configuración de la ventana principal
+        Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
+        stage.getIcons().add(icono);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("juegos.fxml"));
-            //GridPane main = loader.load(); // Se asegura de que el GridPane es el nodo raíz
-            ScrollPane main = loader.load();
-            // Crear un grupo para aplicar el escalado al contenido
-            Group scalableGroup = new Group(main);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("feedback.fxml"));
+        ScrollPane main = loader.load();
 
-            // Crear una escena con la resolución detectada
-            Scene scene = new Scene(new StackPane(scalableGroup), screenWidth, screenHeight);
-            scene.getStylesheets().add(getClass().getResource("resources/interfaz_principal.css").toExternalForm());
+        // Crear un grupo para aplicar el escalado al contenido
+        Group scalableGroup = new Group(main);
 
-            // Calcular el factor de escalado
-            double scaleX = screenWidth / baseWidth;
-            double scaleY = screenHeight / baseHeight;
-            double scale = Math.min(scaleX, scaleY); // Mantener proporciones
+        // Crear una escena con la resolución detectada
+        Scene scene = new Scene(new StackPane(scalableGroup), screenWidth, screenHeight);
+        scene.getStylesheets().add(getClass().getResource("resources/interfaz_principal.css").toExternalForm());
 
-            // Aplicar el escalado
-            scalableGroup.setScaleX(scale);
-            scalableGroup.setScaleY(scale);
+        // Calcular el factor de escalado
+        double scaleX = screenWidth / baseWidth;
+        double scaleY = screenHeight / baseHeight;
+        double scale = Math.min(scaleX, scaleY); // Mantener proporciones
 
-            // Centrar el contenido escalado en la ventana
-            StackPane stackPane = (StackPane) scene.getRoot();
-            stackPane.setAlignment(Pos.CENTER);
+        // Aplicar el escalado
+        scalableGroup.setScaleX(scale);
+        scalableGroup.setScaleY(scale);
 
-            // Configuración del Stage
-            stage.setMaximized(true);
-            stage.setTitle("TECHCON");
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            alerta_de_error(e);
-        }
+        // Centrar el contenido escalado en la ventana
+        StackPane stackPane = (StackPane) scene.getRoot();
+        stackPane.setAlignment(Pos.CENTER);
+
+        // Configuración del Stage
+        stage.setMaximized(true);
+        stage.setTitle("TECHCON");
+        stage.setScene(scene);
+        stage.show();
+    } catch (Exception e) {
+        alerta_de_error(e);
     }
+}
+
 
     
 

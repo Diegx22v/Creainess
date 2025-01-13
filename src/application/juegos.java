@@ -1,15 +1,21 @@
-package application;import javafx.animation.Animation.Status;import javafx.animation.ScaleTransition;import javafx.fxml.FXML;import javafx.fxml.FXMLLoader;
+package application;
+import javafx.animation.Animation.Status;import javafx.animation.ScaleTransition;import javafx.fxml.FXML;import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;import javafx.scene.control.Alert;import javafx.scene.control.Alert.AlertType;import javafx.scene.control.Button;
 import javafx.scene.image.Image;import javafx.scene.image.ImageView;import javafx.scene.text.Text;import javafx.stage.Stage;import javafx.util.Duration;
-//import utils.Utils;
 import Utils.Ruleta;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
 /**
  * Clase de la ventana de juegos.
@@ -32,6 +38,8 @@ public class juegos {
     public Text tittle;
     
     
+    private MediaPlayer mediaPlayer;
+
     /*
         Texto de SubTitulo
     */
@@ -73,7 +81,29 @@ public class juegos {
      inicializarAnimacion_boton_creditos(); 
      inicializarAnimacion_boton_salir(); 
      initialize_animation_return_credits();
+        try {
+        String audio = getClass().getResource("resources/sans.mp3").toExternalForm();
+        Media sound = new Media(audio);
+        mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.setVolume(0.5); // Establecer volumen al 50%
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE); // Reproducción infinita
+        mediaPlayer.play(); // Iniciar reproducción
+    } catch (Exception e) {
+        alerta_de_error(e);
     }
+}
+
+public void alerta_de_error(Exception e) {
+    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+    errorAlert.setTitle("Error en la Aplicación");
+    errorAlert.setHeaderText("Error al reproducir música");
+    errorAlert.setContentText("Detalles: " + e.getMessage());
+    errorAlert.showAndWait();
+}
+
+    
+    
+
     
     
     
@@ -138,6 +168,7 @@ public class juegos {
                     }));
                     timeline.setCycleCount(1); // Ejecutar una sola vez
                     timeline.play();
+                                mediaPlayer.stop();
                     
                     /**                    
                      * CARGAR VIDEO DE RULETA Y DESAPARECER LOS ELEMENTOS PARA QUE SE QUEDE SOLO LA RULETA Y SU VIDEO
@@ -257,51 +288,64 @@ public class juegos {
             stage.close();
         }
         try {
-            Stage MYstage = (Stage) jugar.getScene().getWindow();
-            MYstage.close();
-            double baseWidth = 1920;
-            double baseHeight = 1080;
+    // Cerrar la ventana actual
+    Stage currentStage = (Stage) salir.getScene().getWindow();
+    currentStage.close();
+    
+    // Resolución base
+    double baseWidth = 1920;
+    double baseHeight = 1080;
+    
+    // Detectar resolución de pantalla
+    Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+    double screenWidth = screenBounds.getWidth();
+    double screenHeight = screenBounds.getHeight();
+    
+    // Cargar el archivo FXML
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("juego1.fxml"));
+    ScrollPane main = loader.load();
+    
+    // Crear un grupo para aplicar el escalado al contenido
+    Group scalableGroup = new Group(main);
+    
+    // Crear una escena con la resolución detectada
+    Scene scene = new Scene(new StackPane(scalableGroup), screenWidth, screenHeight);
+    scene.getStylesheets().add(getClass().getResource("resources/interfaz_principal.css").toExternalForm());
+    
+    // Calcular el factor de escalado
+    double scaleX = screenWidth / baseWidth;
+    double scaleY = screenHeight / baseHeight;
+    double scale = Math.min(scaleX, scaleY); // Mantener proporciones
+    
+    // Aplicar el escalado
+    scalableGroup.setScaleX(scale);
+    scalableGroup.setScaleY(scale);
+    
+    // Centrar el contenido escalado en la ventana
+    StackPane stackPane = (StackPane) scene.getRoot();
+    stackPane.setAlignment(Pos.CENTER);
+    
+    // Crear y configurar un nuevo Stage
+    Stage newStage = new Stage();
+    newStage.setMaximized(true);
+    newStage.setTitle("TECHCON");
+    newStage.setScene(scene);
+    
+    // Configuración del ícono
+    Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
+    newStage.getIcons().add(icono);
+    
+    // Detener el reproductor de audio si está activo
+    if (mediaPlayer != null) {
+        mediaPlayer.stop();
+    }
+    
+    // Mostrar la nueva ventana
+    newStage.show();
+} catch (IOException ex) {
+    Logger.getLogger(Juego2.class.getName()).log(Level.SEVERE, null, ex);
+}
 
-            // Detectar resolución de pantalla
-            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-            double screenWidth = screenBounds.getWidth();
-            double screenHeight = screenBounds.getHeight();
-
-            // Configuración de la ventana principal
-            Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
-            MYstage.getIcons().add(icono);
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("feedback.fxml"));
-            //GridPane main = loader.load(); // Se asegura de que el GridPane es el nodo raíz
-            javafx.scene.control.ScrollPane main = loader.load();
-            // Crear un grupo para aplicar el escalado al contenido
-            Group scalableGroup = new Group(main);
-
-            // Crear una escena con la resolución detectada
-            Scene scene = new Scene(new StackPane(scalableGroup), screenWidth, screenHeight);
-            scene.getStylesheets().add(getClass().getResource("resources/interfaz_principal.css").toExternalForm());
-
-            // Calcular el factor de escalado
-            double scaleX = screenWidth / baseWidth;
-            double scaleY = screenHeight / baseHeight;
-            double scale = Math.min(scaleX, scaleY); // Mantener proporciones
-
-            // Aplicar el escalado
-            scalableGroup.setScaleX(scale);
-            scalableGroup.setScaleY(scale);
-
-            // Centrar el contenido escalado en la ventana
-            StackPane stackPane = (StackPane) scene.getRoot();
-            stackPane.setAlignment(Pos.CENTER);
-
-            // Configuración del Stage
-            MYstage.setMaximized(true);
-            MYstage.setTitle("TECHCON");
-            MYstage.setScene(scene);
-            MYstage.show();
-        } catch (Exception e) {
-            alerta_de_error("Error de carga",e);
-        }
     }
     
     
@@ -435,6 +479,7 @@ public class juegos {
     @FXML
     public void ventana_creditos() {
         try {
+            mediaPlayer.stop();
             Stage stage = (Stage) creditos.getScene().getWindow();
             stage.close();
             double baseWidth = 1920;

@@ -398,7 +398,7 @@
                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Problemas Legales de la clonación de voz" />
             </children>
          </VBox>
-         <ImageView fx:id="Delfos" fitHeight="75.0" fitWidth="217.0" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true">
+         <ImageView fx:id="Delfos" fitHeight="75.0" fitWidth="217.0" onMouseEntered="#soft_techcom" pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
                <Image url="@resources/delfos.png" />
             </image>

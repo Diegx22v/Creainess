@@ -1,197 +1,106 @@
 package application;
-import javafx.animation.Animation.Status;
-import javafx.animation.ScaleTransition;
+
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
-import javafx.scene.layout.HBox;
-import javafx.scene.text.Text;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
-import javafx.stage.Stage;
-import javafx.util.Duration;
-import javafx.application.Platform;
-
-import java.awt.*;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
-import javafx.scene.layout.GridPane;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.Screen;
-/**
- * Clase de creditos del proyecto
- * Maneja la logica de esta ventana
- * @author Diego V.
- * @version 1.1
- */
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
 public class Creditos_juegos {
-    /**
-     *  Objeto VBox para contener el primer grupo
-     */
-    @FXML
-    public VBox contenedor_vertical;
- /**
-     *  Objeto Text para contener el primer grupo
-     */
-    @FXML
-    public Text integrantes_d;
-    
-    /**
-     *  Objeto VBox para contener el segundo grupo
-     */
-    @FXML
-    public VBox Contenedor_vertical_dos;
 
-    /**
-     *  Objeto VBox para contener a los profesores
-     */
     @FXML
-    public VBox Contenedor_vertical_tres;
-    
-     /**
-     *  Objeto Text para contener el segundo grupo
-     */
+    private MediaView videocre;
+
+    private MediaPlayer mediaPlayer;
+
     @FXML
-    public Text integrantes_c;
-     /**
-     *  Objeto Text para contener los profesores
-     */
-    @FXML
-    public Text profesores;
+    public void initialize() {
+        try {
+            // Ruta del video
+            Media video = new Media(getClass().getResource("resources/CREDITOS_TECH-CON.mp4").toExternalForm());
+            mediaPlayer = new MediaPlayer(video);
+            videocre.setMediaPlayer(mediaPlayer);
 
-    /**
-     *  Imagen de Techcon
-     */
-    @FXML
-    public ImageView Techcom;
+            // Reproducir el video
+            mediaPlayer.play();
 
-    /**
-     *  Imagen de retorno
-     */
-    @FXML
-    public ImageView Return_credits;
-
-
-    /**
-     *  Animacion de la imagen de retorno
-     */
-    public ScaleTransition credits_return_animation;
-
-    /**
-     * Inicializa las animaciones y metodos
-     */
-    @FXML
-    public void initialize(){
-        initialize_animation_return_credits();
-        String texto_d = "* Diego Villota\n"
-                + "* Dayana Torres\n"
-                + "* Carlos Vélez\n"
-                + "* Franklin Chunga\n";
-        String texto_c = "* Danna Lopez\n"
-                + "* Felix Mendoza\n"
-                + "* Daniela Marcillo\n"
-                + "* Valeria Arias\n";
-        String texto_p = "* Lcda. Maria Fernanda Lavaye\n"
-                + "* Lcdo. Anthony Sotomayor";
-        integrantes_d.setText(texto_d);
-        integrantes_c.setText(texto_c);
-        profesores.setText(texto_p);
-                }
-
-    /**
-     * Inicia una animacion
-     */
-    public void initialize_animation_return_credits() {
-
-        credits_return_animation = new ScaleTransition(Duration.millis(150), Return_credits);
-        credits_return_animation.setByX(0.15);
-        credits_return_animation.setByY(0.10);
-        credits_return_animation.setAutoReverse(true);
-        credits_return_animation.setCycleCount(2);
-    }
-
-    /**
-     * verifica la ejecucion de la animacion
-     * @param animacion recoge la animacion
-     */
-    public void animacion_image(ScaleTransition animacion) {
-        if (animacion.getStatus() != Status.RUNNING) {
-            animacion.playFromStart();
+            // Detectar cuando el video termine
+            mediaPlayer.setOnEndOfMedia(() -> {
+                Stage stage = (Stage) videocre.getScene().getWindow();
+                stage.close();
+                cargarPaginaPrincipal(stage);
+            });
+        } catch (Exception e) {
+            alerta_de_error("Error al reproducir el video", e);
         }
     }
 
-    /**
-     * Inicia la animacion
-     */
-    @FXML
-   public  void softimage1() {
-        animacion_image(credits_return_animation);
-    }
-
-    /**
-     * Cierra la ventana actual y regresa a la anterior
-     */
-    @FXML
-    public void return_main1() {
+    private void cargarPaginaPrincipal(Stage stage) {
         try {
-            Return_credits.setDisable(true);
-             Stage stage = (Stage) Return_credits.getScene().getWindow();
-            stage.close();
             double baseWidth = 1920;
             double baseHeight = 1080;
+
+            // Detectar resolución de pantalla
             Rectangle2D screenBounds = Screen.getPrimary().getBounds();
             double screenWidth = screenBounds.getWidth();
             double screenHeight = screenBounds.getHeight();
+
+            // Configuración de la ventana principal
             Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
             stage.getIcons().add(icono);
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("juegos.fxml"));
             javafx.scene.control.ScrollPane main = loader.load();
+
+            // Crear un grupo para aplicar el escalado al contenido
             Group scalableGroup = new Group(main);
+
+            // Crear una escena con la resolución detectada
             Scene scene = new Scene(new StackPane(scalableGroup), screenWidth, screenHeight);
             scene.getStylesheets().add(getClass().getResource("resources/interfaz_principal.css").toExternalForm());
+
+            // Calcular el factor de escalado
             double scaleX = screenWidth / baseWidth;
             double scaleY = screenHeight / baseHeight;
-            double scale = Math.min(scaleX, scaleY); 
+            double scale = Math.min(scaleX, scaleY); // Mantener proporciones
+
+            // Aplicar el escalado
             scalableGroup.setScaleX(scale);
             scalableGroup.setScaleY(scale);
+
+            // Centrar el contenido escalado en la ventana
             StackPane stackPane = (StackPane) scene.getRoot();
             stackPane.setAlignment(Pos.CENTER);
+
+            // Configuración del Stage
             stage.setMaximized(true);
-            stage.setTitle("Juegos locos Franklin");
+            stage.setTitle("TECHCON");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
-            // ALERTA`
-            alerta_de_error(e);
-        }finally{
-            Return_credits.setDisable(false);
+            alerta_de_error("Error de carga", e);
         }
     }
 
-    /**
-     * Crea una alerta de error
-     * @param e recoge el error
-     */
-    public void alerta_de_error(Exception e) {
-        Alert errorAlert = new Alert(AlertType.ERROR);
+    public void alerta_de_error(String header, Exception e) {
+        Alert errorAlert = new Alert(Alert.AlertType.ERROR);
         errorAlert.setTitle("Error en la Aplicación");
-        errorAlert.setHeaderText("Error en la ejecución");
-        errorAlert.setContentText("error: "+e);
+        errorAlert.setHeaderText(header);
+        errorAlert.setContentText("Error: " + e.getMessage());
         Stage errores = (Stage) errorAlert.getDialogPane().getScene().getWindow();
         errores.getIcons().add(new Image(getClass().getResourceAsStream("resources/error_icon.png")));
         errorAlert.showAndWait();

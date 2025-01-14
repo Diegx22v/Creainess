@@ -210,118 +210,106 @@ void quitar(MouseEvent event) {
         l = "Órdenes da, órdenes recibe, algunas autoriza, otras las prohíbe ¿Qué es?";
         break;
     case 2:
-        x = "Retrato";
-        y = "Pintura";
-        z = "Perro";
-        l = "Si soy joven, joven quedo. Si soy viejo, viejo quedo. Tengo boca pero no hablo, tengo ojos pero no veo. ¿Qué soy?";
+        x = "Sí";
+        y = "No";
+        z = "No se puede determinar";
+        l = "Tienes un cajón con 10 calcetines negros y 10 blancos. Cierras los ojos y sacas tres calcetines. ¿Tienes un par de calcetines iguales?";
         break;
     case 3:
-        x = "Los zapatos";
-        y = "Las aves";
-        z = "Los globos";
-        l = "Cuando nos atan salimos y cuando nos sueltan nos quedamos. ¿Quiénes somos?";
+        x = "Alicia";
+        y = "Roberto";
+        z = "Carlos";
+        l = "Alicia mira a Roberto y Roberto mira a Carlos. Alicia está casada, Carlos no. ¿Una persona casada está mirando a una persona soltera?";
         break;
     case 4:
-        x = "Retrato";
-        y = "Pintura";
-        z = "Perro";
-        l = "Si soy joven, joven quedo. Si soy viejo, viejo quedo. Tengo boca pero no hablo, tengo ojos pero no veo. ¿Qué soy?";
+        x = "40 centavos";
+        y = "60 centavos";
+        z = "70 centavos";
+        l = "Una pera cuesta 40 centavos, una banana 60 centavos y una ciruela 70 centavos. ¿Cuánto cuesta una manzana?";
         break;
     case 5:
-        x = "Retrato";
-        y = "Pintura";
-        z = "Perro";
-        l = "Si soy joven, joven quedo. Si soy viejo, viejo quedo. Tengo boca pero no hablo, tengo ojos pero no veo. ¿Qué soy?";
+        x = "Un router";
+        y = "Un puerto";
+        z = "Un firewall";
+        l = "Si quieres conectarte conmigo, tu IP debes saber. Te doy acceso a redes, pero no me puedes ver. ¿Qué soy?";
         break;
     case 6:
-        x = "La luna";
-        y = "El arcoíris";
-        z = "Las nubes";
-        l = "Aunque todos pueden verme, nadie puede tocarme. Vivo en el cielo y a veces cambio de color. ¿Qué soy?";
+        x = "Un disco duro";
+        y = "Una memoria USB";
+        z = "Un procesador";
+        l = "No tengo piernas, pero corro veloz. Guardo tus datos, aunque no soy un cajón. ¿Qué soy?";
         break;
     case 7:
-        x = "Los zapatos";
-        y = "Las aves";
-        z = "Los globos";
-        l = "Cuando nos atan salimos y cuando nos sueltan nos quedamos. ¿Quiénes somos?";
+        x = "Un disco duro";
+        y = "La RAM";
+        z = "La ROM";
+        l = "Aunque no soy humano, tengo memoria. Sin mí, tu computadora sería historia. ¿Qué soy?";
         break;
     case 8:
-        x = "Retrato";
-        y = "Pintura";
-        z = "Perro";
-        l = "Si soy joven, joven quedo. Si soy viejo, viejo quedo. Tengo boca pero no hablo, tengo ojos pero no veo. ¿Qué soy?";
+        x = "Una carpeta";
+        y = "Un navegador";
+        z = "Una aplicación";
+        l = "En un solo clic me puedes abrir, y en mi interior, muchos datos puedes descubrir y guardar. ¿Qué soy?";
         break;
     case 9:
-        x = "El tren";
-        y = "El viento";
-        z = "El tiempo";
-        l = "Siempre está en movimiento, pero no tiene piernas. Cruza países y mares, pero no es un barco. ¿Qué soy?";
+        x = "Almacenamiento en la nube";
+        y = "Un servidor";
+        z = "Un disco duro externo";
+        l = "Aunque no soy un mago, puedo hacer aparecer. Guardo datos en la nube, para que los puedas ver. ¿Qué soy?";
         break;
     case 10:
-        x = "El arcoíris";
-        y = "La luna";
-        z = "Las nubes";
-        l = "Aunque todos pueden verme, nadie puede tocarme. Vivo en el cielo y a veces cambio de color. ¿Qué soy?";
+        x = "El monitor";
+        y = "El sistema operativo";
+        z = "La ROM";
+        l = "Me ves al encender la computadora, y sin mí no sabrías a dónde ir. Pero no me tocas, solo me observas.";
         break;
     case 11:
-        x = "Retrato";
-        y = "Pintura";
-        z = "Perro";
-        l = "Si soy joven, joven quedo. Si soy viejo, viejo quedo. Tengo boca pero no hablo, tengo ojos pero no veo. ¿Qué soy?";
+        x = "Un motor de búsqueda";
+        y = "Un navegador";
+        z = "Una base de datos";
+        l = "Me buscas cuando necesitas aprender, investigar o curiosear. Soy rápido y siempre encuentro algo para mostrarte.";
         break;
     case 12:
-        x = "9";
-        y = "12";
-        z = "15";
-        l = "Los señores García tienen seis hijas y cada hija tiene un hermano. ¿Cuántas personas hay en la familia García?";
+        x = "Un software de modelado 3D";
+        y = "Un sistema operativo";
+        z = "Un navegador web";
+        l = "Dicen que soy virtual, pero soy tan real como tus ideas. Te dejo crear mundos enteros con solo unos clics.";
         break;
     case 13:
-        x = "El viento";
-        y = "El tren";
-        z = "El tiempo";
-        l = "Siempre está en movimiento, pero no tiene piernas. Cruza países y mares, pero no es un barco. ¿Qué soy?";
+        x = "Hardware";
+        y = "Software";
+        z = "Monitor";
+        l = "No soy un ser físico, pero me dedico a las máquinas. Doy vida a lo digital y energía a las pantallas. ¿Qué soy?";
         break;
     case 14:
-        x = "Retrato";
-        y = "Pintura";
-        z = "Perro";
-        l = "Si soy joven, joven quedo. Si soy viejo, viejo quedo. Tengo boca pero no hablo, tengo ojos pero no veo. ¿Qué soy?";
+        x = "IA Estrecha o Específica (ANI)";
+        y = "IA superdotada";
+        z = "Clonación de voz";
+        l = "Puedo hacer una sola tarea muy bien, como reconocer la voz o detectar imágenes, pero no pienso como un humano. ¿Qué soy?";
         break;
     case 15:
-        x = "La primera";
-        y = "La segunda";
-        z = "La tercera";
-        l = "Tienes que elegir entre tres habitaciones. La primera está llena de ninjas letales, la segunda está repleta de mercenarios con armas cargadas y la tercera está llena de leones muertos de hambre. ¿Qué habitación es la más segura?";
+        x = "Superinteligencia Artificial";
+        y = "Deepfake";
+        z = "IA general";
+        l = "Hoy soy solo una idea, pero si algún día llego, seré la más sabia del universo y superaría al humano en todo.";
         break;
     case 16:
-        x = "9";
-        y = "12";
-        z = "15";
-        l = "Los señores García tienen seis hijas y cada hija tiene un hermano. ¿Cuántas personas hay en la familia García?";
+        x = "Realidad virtual";
+        y = "Realidad aumentada";
+        z = "Realidad mixta";
+        l = "Soy un creador virtual de mundos, que realza lo real con lo imaginado. ¿Qué soy?";
         break;
     case 17:
-        x = "Retrato";
-        y = "Pintura";
-        z = "Perro";
-        l = "Si soy joven, joven quedo. Si soy viejo, viejo quedo. Tengo boca pero no hablo, tengo ojos pero no veo. ¿Qué soy?";
+        x = "Sintaxis";
+        y = "Compilador";
+        z = "Algoritmo";
+        l = "Como los cimientos de una casa, soy crucial para el código, para que el programa surja. ¿Quién soy yo?";
         break;
     case 18:
-        x = "8.298";
-        y = "8.271";
-        z = "8.293";
-        l = "¿Cuál es el siguiente número de esta serie: 3.829, 9.382, 2.938…?";
-        break;
-    case 19:
-        x = "La tercera";
-        y = "La primera";
-        z = "La segunda";
-        l = "Tienes que elegir entre tres habitaciones. La primera está llena de ninjas letales, la segunda está repleta de mercenarios con armas cargadas y la tercera está llena de leones muertos de hambre. ¿Qué habitación es la más segura?";
-        break;
-    case 20:
-        x = "Retrato";
-        y = "Pintura";
-        z = "Perro";
-        l = "Si soy joven, joven quedo. Si soy viejo, viejo quedo. Tengo boca pero no hablo, tengo ojos pero no veo. ¿Qué soy?";
+        x = "Android";
+        y = "Windows";
+        z = "Mac";
+        l = "Soy un sistema operativo de código abierto basado en Unix, utilizado en servidores y dispositivos móviles. ¿Qué soy?";
         break;
     default:
         System.out.println("Número no reconocido: " + numero);
@@ -331,6 +319,7 @@ void quitar(MouseEvent event) {
         l = "";
         break;
 }
+
 
         }
             System.out.println("Texto seleccionado para el caso " + numero + ":");
@@ -347,66 +336,8 @@ void quitar(MouseEvent event) {
     } 
     catch (Exception i) {
     
-
-        try {
-            
-            Stage MYstage = (Stage) zB.getScene().getWindow();
-            MYstage.close(); // Cerrar la ventana actual
-            
-            // Resolución base
-            double baseWidth = 1920;
-            double baseHeight = 1080;
-            
-            // Detectar resolución de pantalla
-            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-            double screenWidth = screenBounds.getWidth();
-            double screenHeight = screenBounds.getHeight();
-            
-            // Configuración del ícono
-            Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
-            MYstage.getIcons().add(icono);
-            
-            // Detener el reproductor de audio
-            if (mediaPlayer != null) {
-                mediaPlayer.stop();
-            }
-            
-            // Cargar el archivo FXML
-            mediaPlayer.stop();
-            mediaPlayer = null;
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("juegos.fxml"));
-            
-            ScrollPane main = loader.load();
-            
-            // Crear un grupo para aplicar el escalado al contenido
-            Group scalableGroup = new Group(main);
-            
-            // Crear una escena con la resolución detectada
-            Scene scene = new Scene(new StackPane(scalableGroup), screenWidth, screenHeight);
-            scene.getStylesheets().add(getClass().getResource("resources/interfaz_principal.css").toExternalForm());
-            
-            // Calcular el factor de escalado
-            double scaleX = screenWidth / baseWidth;
-            double scaleY = screenHeight / baseHeight;
-            double scale = Math.min(scaleX, scaleY); // Mantener proporciones
-            
-            // Aplicar el escalado
-            scalableGroup.setScaleX(scale);
-            scalableGroup.setScaleY(scale);
-            
-            // Centrar el contenido escalado en la ventana
-            StackPane stackPane = (StackPane) scene.getRoot();
-            stackPane.setAlignment(Pos.CENTER);
-            
-            // Configuración del Stage
-            Stage newStage = new Stage();
-            newStage.setMaximized(true);
-            newStage.setTitle("TECHCON");
-            newStage.setScene(scene);
-            newStage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(Juego2.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        cambiarAEscenaJuegos();
+        
     }
 }
         

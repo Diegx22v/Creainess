@@ -31,6 +31,10 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import static javafx.scene.paint.Color.color;
+import javafx.scene.text.Font;
+import static javafx.scene.text.Font.font;
+import static javafx.scene.text.Font.font;
+import static javafx.scene.text.Font.font;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -57,7 +61,7 @@ public class Juego1 {
     @FXML
     private Text fT;
     
-    private String  c = null, d = null, e = null, f = null, piunt = "/5";
+    private String  c = null, d = null, e = null, f = null, piunt = " de 5", pprimero = "Pregunta ";
     
     private int p = 0, attempts = 1;
     
@@ -200,7 +204,7 @@ void quitar(MouseEvent event) {
        cB.setVisible(true);
        dB.setVisible(true);
        eB.setVisible(true);
-       intentoss.setText(valueOf(attempts) + piunt);   
+       intentoss.setText(pprimero + valueOf(attempts) + piunt);   
        for (int i = 0; i < 4; i++) {
        
             switch (numero) {
@@ -208,121 +212,121 @@ void quitar(MouseEvent event) {
                     c = "8";
                     d = "4";
                     e = "16";
-                    f = "2^3";
+                    f = "¿Cuánto es 2^3?";
                     break;
                 case 2:
                     c = "64";
                     d = "125";
                     e = "27";
-                    f = "5^3";
+                    f = "¿Cuánto es 5^3?";
                     break;
                 case 3:
                     c = "27";
                     d = "9";
                     e = "81";
-                    f = "3^4";
+                    f = "¿Cuánto es 3^4?";
                     break;
                 case 4:
                     c = "49";
                     d = "25";
                     e = "16";
-                    f = "7^2";
+                    f = "¿Cuánto es 7^2?";
                     break;
                 case 5:
                     c = "64";
                     d = "256";
                     e = "512";
-                    f = "4^4";
+                    f = "¿Cuánto es 4^4?";
                     break;
                 case 6:
                     c = "25";
                     d = "125";
                     e = "625";
-                    f = "5^4";
+                    f = "¿Cuánto es 5^4?";
                     break;
                 case 7:
                     c = "1024";
                     d = "512";
                     e = "2048";
-                    f = "2^10";
+                    f = "¿Cuánto es 2^10?";
                     break;
                 case 8:
                     c = "49";
                     d = "343";
                     e = "7";
-                    f = "7^3";
+                    f = "¿Cuánto es 7^3?";
                     break;
                 case 9:
                     c = "6";
                     d = "9";
                     e = "36";
-                    f = "6^2";
+                    f = "¿Cuánto es 6^2?";
                     break;
                 case 10:
                     c = "16";
                     d = "32";
                     e = "8";
-                    f = "2^4";
+                    f = "¿Cuánto es 2^4?";
                     break;
                 case 11:
                     c = "12";
                     d = "144";
                     e = "24";
-                    f = "12^2";
+                    f = "¿Cuánto es 12^2?";
                     break;
                 case 12:
                     c = "81";
                     d = "27";
                     e = "729";
-                    f = "9^3";
+                    f = "¿Cuánto es 9^3?";
                     break;
                 case 13:
                     c = "512";
                     d = "128";
                     e = "256";
-                    f = "8^3";
+                    f = "¿Cuánto es 8^3?";
                     break;
                 case 14:
                     c = "64";
                     d = "16";
                     e = "4";
-                    f = "4^2";
+                    f = "¿Cuánto es 4^2?";
                     break;
                 case 15:
                     c = "25";
                     d = "50";
                     e = "100";
-                    f = "10^2";
+                    f = "¿Cuánto es 10^2?";
                     break;
                 case 16:
                     c = "64";
                     d = "16";
                     e = "32";
-                    f = "4^3";
+                    f = "¿Cuánto es 4^3?";
                     break;
                 case 17:
                     c = "10";
                     d = "1";
                     e = "100";
-                    f = "10^0";
+                    f = "¿Cuánto es 10^0?";
                     break;
                 case 18:
                     c = "32";
                     d = "64";
                     e = "128";
-                    f = "2^7";
+                    f = "¿Cuánto es 2^7?";
                     break;
                 case 19:
                     c = "400";
                     d = "40";
                     e = "100";
-                    f = "20^2";
+                    f = "¿Cuánto es 20^2?";
                     break;
                 case 20:
                     c = "3";
                     d = "9";
                     e = "27";
-                    f = "3^2";
+                    f = "¿Cuánto es 3^2?";
                     break;
                 default:
                     c = "";
@@ -330,6 +334,7 @@ void quitar(MouseEvent event) {
                     e = "";
                     f = "";
                     break;
+                    
                     
             }
             System.out.println("hola soy el case" + numero);
@@ -343,65 +348,14 @@ void quitar(MouseEvent event) {
        
             
     }catch (Exception e) {            
-            try {
-    // Cerrar la ventana actual
-    Stage currentStage = (Stage) eB.getScene().getWindow();
-    currentStage.close();
-    
-    // Resolución base
-    double baseWidth = 1920;
-    double baseHeight = 1080;
-    
-    // Detectar resolución de pantalla
-    Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-    double screenWidth = screenBounds.getWidth();
-    double screenHeight = screenBounds.getHeight();
-    
-    // Cargar el archivo FXML
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("juego2.fxml"));
-    ScrollPane main = loader.load();
-    
-    // Crear un grupo para aplicar el escalado al contenido
-    Group scalableGroup = new Group(main);
-    
-    // Crear una escena con la resolución detectada
-    Scene scene = new Scene(new StackPane(scalableGroup), screenWidth, screenHeight);
-    scene.getStylesheets().add(getClass().getResource("resources/interfaz_principal.css").toExternalForm());
-    
-    // Calcular el factor de escalado
-    double scaleX = screenWidth / baseWidth;
-    double scaleY = screenHeight / baseHeight;
-    double scale = Math.min(scaleX, scaleY); // Mantener proporciones
-    
-    // Aplicar el escalado
-    scalableGroup.setScaleX(scale);
-    scalableGroup.setScaleY(scale);
-    
-    // Centrar el contenido escalado en la ventana
-    StackPane stackPane = (StackPane) scene.getRoot();
-    stackPane.setAlignment(Pos.CENTER);
-    
-    // Crear y configurar un nuevo Stage
-    Stage newStage = new Stage();
-    newStage.setMaximized(true);
-    newStage.setTitle("TECHCON");
-    newStage.setScene(scene);
-    
-    // Configuración del ícono
-    Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
-    newStage.getIcons().add(icono);
-    
+          
+        cambiarAEscenaJuegos();
     // Detener el reproductor de audio si está activo
     if (mediaPlayer != null) {
         mediaPlayer.stop();
     }
-                mediaPlayer = null;
-
+    
     // Mostrar la nueva ventana
-    newStage.show();
-} catch (IOException ex) {
-    Logger.getLogger(Juego2.class.getName()).log(Level.SEVERE, null, ex);
-}
 
 }
 
@@ -440,7 +394,7 @@ void quitar(MouseEvent event) {
          logica();
          System.out.println("c");
          attempts++;
-         intentoss.setText(valueOf(attempts) + piunt);
+        intentoss.setText(pprimero + valueOf(attempts) + piunt);   
          timer.setText(valueOf(timos) + po + valueOf(timar));
          
         
@@ -475,7 +429,7 @@ void quitar(MouseEvent event) {
 
          System.out.println("d");
          attempts++;
-         intentoss.setText(valueOf(attempts) + piunt);
+        intentoss.setText(pprimero + valueOf(attempts) + piunt);   
         timer.setText(valueOf(timos) + po + valueOf(timar));
     }
        
@@ -510,7 +464,7 @@ void quitar(MouseEvent event) {
 
          System.out.println("e");
          attempts++;
-         intentoss.setText(valueOf(attempts) + piunt);
+        intentoss.setText(pprimero + valueOf(attempts) + piunt);   
         timer.setText(valueOf(timos) + po + valueOf(timar));
     }   
     
@@ -551,11 +505,11 @@ void quitar(MouseEvent event) {
      */
     public void alerta_de_error(String header,Exception e) {
         Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-        errorAlert.setTitle("Error en la Aplicación");
+        errorAlert.setTitle("Error en la aplicación");
         errorAlert.setHeaderText(header);
         errorAlert.setContentText("error: " + e);
         Stage errores = (Stage) errorAlert.getDialogPane().getScene().getWindow();
         errores.getIcons().add(new Image(getClass().getResourceAsStream("resources/error_icon.png")));
-        errorAlert.show();
+        errorAlert.showAndWait();
     } 
 }

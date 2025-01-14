@@ -9,13 +9,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Juego2">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1080.0" prefWidth="1920.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1092.0" prefWidth="1920.0">
          <children>
+            <MediaView fitHeight="200.0" fitWidth="200.0" />
+            <ImageView fitHeight="1220.0" fitWidth="2179.0" layoutX="-9.0" layoutY="-18.0" opacity="0.25">
+               <image>
+                  <Image url="@resources/question.jpg" />
+               </image>
+            </ImageView>
             <Button fx:id="quitarp" layoutX="69.0" layoutY="462.0" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#quitarpu" prefHeight="187.0" prefWidth="187.0" style="-fx-border-color: gray; -fx-border-radius: 30; -fx-background-radius: 30; -fx-border-width: 2; -fx-background-color: white;">
                <font>
                   <Font size="60.0" />
@@ -24,63 +31,76 @@
                   <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
                </effect>
                <graphic>
-                  <ImageView fitHeight="114.0" fitWidth="152.0">
+                  <ImageView fitHeight="138.0" fitWidth="154.0">
                      <image>
-                        <Image url="@resources/borreador_aholla.png" />
+                        <Image url="@resources/borreador%20aholla.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Text layoutX="87.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORRADOR" wrappingWidth="156.13671875">
+            <Text layoutX="73.0" layoutY="697.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORRADOR" wrappingWidth="180.13671875">
                <font>
-                  <Font name="Consolas" size="35.0" />
+                  <Font name="Dubai Medium" size="35.0" />
                </font>
             </Text>
-            <Text fill="#616161" layoutX="107.0" layoutY="726.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-50 pts" wrappingWidth="113.13671875">
+            <Text fill="#515151" layoutX="120.0" layoutY="727.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-50 pts" wrappingWidth="95.80339050292969">
                <font>
-                  <Font name="Consolas" size="29.0" />
+                  <Font name="Dubai Medium" size="28.0" />
                </font>
             </Text>
             <Pane layoutX="-1.0" prefHeight="90.0" prefWidth="2011.0" style="-fx-background-color: black;">
                <children>
-                  <Text fx:id="pT" fill="WHITE" layoutX="503.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" textAlignment="CENTER" wrappingWidth="155.47015380859375">
+                  <Text fx:id="pT" fill="WHITE" layoutX="111.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" wrappingWidth="155.47015380859375">
                      <font>
-                        <Font name="Consolas" size="48.0" />
+                        <Font name="Dubai Medium" size="48.0" />
                      </font>
                   </Text>
-                  <Text fx:id="intentoss" fill="WHITE" layoutX="1274.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0/0" textAlignment="CENTER" wrappingWidth="96.8033447265625">
+                  <ImageView fitHeight="62.0" fitWidth="62.0" layoutX="1713.0" layoutY="14.0">
+                     <image>
+                        <Image url="@resources/timer.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="timer" fill="WHITE" layoutX="1789.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0:00" wrappingWidth="251.47015380859375">
                      <font>
-                        <Font name="Consolas" size="48.0" />
+                        <Font name="Dubai Medium" size="48.0" />
                      </font>
                   </Text>
-                  <Text fx:id="timer" fill="WHITE" layoutX="818.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00" textAlignment="CENTER" wrappingWidth="251.47015380859375">
+                  <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="31.0" layoutY="16.0">
+                     <image>
+                        <Image url="@resources/star.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="pT2" fill="WHITE" layoutX="776.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lenguaje" textAlignment="CENTER" wrappingWidth="348.80352783203125">
                      <font>
-                        <Font name="Consolas" size="48.0" />
+                        <Font name="Dubai Medium" size="36.0" />
                      </font>
                   </Text>
                </children>
+               <effect>
+                  <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
+               </effect>
             </Pane>
-            <VBox layoutX="619.0" layoutY="668.0" prefHeight="200.0" prefWidth="629.0" spacing="30.0">
+            <VBox layoutX="549.0" layoutY="668.0" prefHeight="200.0" prefWidth="629.0" spacing="30.0">
                <children>
-                  <Button layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click1" prefHeight="90.0" prefWidth="619.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;" text="12345" fx:id="xB">
+                  <Button layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click1" prefHeight="90.0" prefWidth="785.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;" text="4" fx:id="xB">
                      <font>
-                        <Font size="35.0" />
+                        <Font name="Dubai Medium" size="35.0" />
                      </font>
                      <effect>
                         <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
                      </effect>
                   </Button>
-                  <Button fx:id="yB" layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click2" prefHeight="90.0" prefWidth="619.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;">
+                  <Button fx:id="yB" layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click2" prefHeight="90.0" prefWidth="785.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;" text="5">
                      <font>
-                        <Font size="35.0" />
+                        <Font name="Dubai Medium" size="35.0" />
                      </font>
                      <effect>
                         <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
                      </effect>
                   </Button>
-                  <Button fx:id="zB" layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click3" prefHeight="90.0" prefWidth="619.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;">
+                  <Button fx:id="zB" layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click3" prefHeight="90.0" prefWidth="785.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;" text="6">
                      <font>
-                        <Font size="35.0" />
+                        <Font name="Dubai Medium" size="35.0" />
                      </font>
                      <effect>
                         <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
@@ -91,11 +111,16 @@
                   <Insets right="10.0" />
                </padding>
             </VBox>
-            <Pane layoutX="471.0" layoutY="154.0" prefHeight="436.0" prefWidth="919.0" style="-fx-background-color: white; -fx-border-width: 2; -fx-border-color: gray; -fx-border-radius: 60; -fx-background-radius: 60;">
+            <Pane layoutX="396.0" layoutY="161.0" prefHeight="436.0" prefWidth="1103.0" style="-fx-background-color: white; -fx-border-width: 2; -fx-border-color: gray; -fx-border-radius: 60; -fx-background-radius: 62;">
                <children>
-                  <Text fx:id="lT" layoutX="229.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="475.469970703125">
+                  <Text fx:id="intentoss" fill="#727272" layoutX="257.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pregunta 0 de 0" textAlignment="CENTER" wrappingWidth="584.8033447265625">
                      <font>
-                        <Font name="Arial" size="37.0" />
+                        <Font name="Dubai Medium" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="lT" fill="#393939" layoutX="-1.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hipopotomonstrosesquipedaliofobia Hipopotomonstrosesquipedaliofobia Hipopotomonstrosesquipedaliofobia Hipopotomonstrosesquipedaliofobia Hipopotomonstrosesquipedaliofobia Hipopotomonstrosesquipedaliofobia" textAlignment="CENTER" wrappingWidth="1095.469970703125">
+                     <font>
+                        <Font name="Dubai Medium" size="36.0" />
                      </font>
                   </Text>
                </children>
@@ -103,38 +128,45 @@
                   <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
                </effect>
             </Pane>
-            <Pane fx:id="popup" layoutX="469.0" layoutY="2.0" opacity="0.93" prefHeight="1080.0" prefWidth="926.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-width: 3; -fx-border-radius: 100; -fx-background-radius: 100;">
+            <Pane fx:id="popup" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button layoutX="101.0" layoutY="778.0" mnemonicParsing="false" onMouseClicked="#quitar" prefHeight="233.0" prefWidth="724.0" style="-fx-border-color: gray; -fx-border-radius: 50; -fx-background-radius: 56; -fx-border-width: 3;" text="Empezar" textAlignment="CENTER">
-                     <font>
-                        <Font size="96.0" />
-                     </font>
-                  </Button>
-                  <Text layoutX="-2.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reglas" textAlignment="CENTER" wrappingWidth="926.0">
-                     <font>
-                        <Font size="100.0" />
-                     </font>
-                  </Text>
-                  <Text layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="926.0">
-                     <font>
-                        <Font size="65.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="3.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Se puede jugar en grupo" textAlignment="CENTER" wrappingWidth="926.0">
-                     <font>
-                        <Font size="65.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="4.0" layoutY="620.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-No se puede buscar las respuestas en el celular" textAlignment="CENTER" wrappingWidth="926.0">
-                     <font>
-                        <Font size="65.0" />
-                     </font>
-                  </Text>
+                  <Pane layoutX="468.0" layoutY="235.0" prefHeight="647.0" prefWidth="926.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-width: 3; -fx-border-radius: 100; -fx-background-radius: 100;">
+                     <children>
+                        <Button layoutX="164.0" layoutY="492.0" mnemonicParsing="false" onMouseClicked="#quitar" prefHeight="68.0" prefWidth="601.0" style="-fx-border-color: gray; -fx-border-radius: 75; -fx-background-radius: 75; -fx-border-width: 2; -fx-background-color: white;" text="Empezar" textAlignment="CENTER">
+                           <font>
+                              <Font name="Dubai Medium" size="34.0" />
+                           </font>
+                           <effect>
+                              <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
+                           </effect>
+                        </Button>
+                        <Text fx:id="pT1" layoutX="4.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGLAS" textAlignment="CENTER" wrappingWidth="926.0">
+                           <font>
+                              <Font name="Dubai Medium" size="70.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="pT111" layoutX="-5.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="• Puedes jugar en grupo" textAlignment="CENTER" wrappingWidth="926.0">
+                           <font>
+                              <Font name="Arial" size="40.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="pT1111" layoutX="-4.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="• No busques las respuestas" textAlignment="CENTER" wrappingWidth="926.0">
+                           <font>
+                              <Font name="Arial" size="40.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="pT1112" layoutX="-4.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="• No uses calculadora" textAlignment="CENTER" wrappingWidth="926.0">
+                           <font>
+                              <Font name="Arial" size="40.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <effect>
+                        <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
+                     </effect>
+                  </Pane>
                </children>
             </Pane>
          </children></AnchorPane>
   </content>
-   <padding>
-      <Insets top="20.0" />
-   </padding>
 </ScrollPane>

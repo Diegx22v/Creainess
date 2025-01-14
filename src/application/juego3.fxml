@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Juego1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Juego3">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1092.0" prefWidth="1920.0">
          <children>
@@ -21,7 +21,7 @@
                   <Image url="@resources/question.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="quitarp" layoutX="69.0" layoutY="462.0" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#quitarpu" prefHeight="187.0" prefWidth="187.0" style="-fx-border-color: gray; -fx-border-radius: 30; -fx-background-radius: 30; -fx-border-width: 2; -fx-background-color: white;">
+            <Button fx:id="quitarp" layoutX="69.0" layoutY="462.0" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#quitarpu" prefHeight="187.0" prefWidth="187.0" style="-fx-border-color: gray; -fx-border-radius: 30; -fx-background-radius: 30; -fx-border-width: 2; -fx-background-color: white;" visible="false">
                <font>
                   <Font size="60.0" />
                </font>
@@ -36,12 +36,12 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Text layoutX="73.0" layoutY="697.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORRADOR" wrappingWidth="180.13671875">
+            <Text layoutX="73.0" layoutY="697.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORRADOR" visible="false" wrappingWidth="180.13671875">
                <font>
                   <Font name="Dubai Medium" size="35.0" />
                </font>
             </Text>
-            <Text fill="#515151" layoutX="120.0" layoutY="727.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-50 pts" wrappingWidth="95.80339050292969">
+            <Text fill="#515151" layoutX="120.0" layoutY="727.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-50 pts" visible="false" wrappingWidth="95.80339050292969">
                <font>
                   <Font name="Dubai Medium" size="28.0" />
                </font>
@@ -68,7 +68,7 @@
                         <Image url="@resources/star.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="pT2" fill="WHITE" layoutX="776.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matemática" textAlignment="CENTER" wrappingWidth="348.80352783203125">
+                  <Text fx:id="pT2" fill="WHITE" layoutX="776.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Memorizar" textAlignment="CENTER" wrappingWidth="348.80352783203125">
                      <font>
                         <Font name="Dubai Medium" size="36.0" />
                      </font>
@@ -78,9 +78,9 @@
                   <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
                </effect>
             </Pane>
-            <VBox layoutX="549.0" layoutY="668.0" prefHeight="200.0" prefWidth="629.0" spacing="30.0">
+            <VBox layoutX="620.0" layoutY="617.0" prefHeight="439.0" prefWidth="629.0" spacing="30.0">
                <children>
-                  <Button fx:id="cB" layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click1" prefHeight="90.0" prefWidth="785.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;" text="4">
+                  <Button layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click1" prefHeight="90.0" prefWidth="300.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;" text="4" fx:id="xB">
                      <font>
                         <Font name="Dubai Medium" size="35.0" />
                      </font>
@@ -88,15 +88,7 @@
                         <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
                      </effect>
                   </Button>
-                  <Button fx:id="dB" layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click2" prefHeight="90.0" prefWidth="785.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;" text="5">
-                     <font>
-                        <Font name="Dubai Medium" size="35.0" />
-                     </font>
-                     <effect>
-                        <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
-                     </effect>
-                  </Button>
-                  <Button fx:id="eB" layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click3" prefHeight="90.0" prefWidth="785.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;" text="6">
+                  <Button fx:id="yB" layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click2" prefHeight="90.0" prefWidth="300.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;" text="5">
                      <font>
                         <Font name="Dubai Medium" size="35.0" />
                      </font>
@@ -109,16 +101,39 @@
                   <Insets right="10.0" />
                </padding>
             </VBox>
-            <Pane layoutX="508.0" layoutY="161.0" prefHeight="436.0" prefWidth="867.0" style="-fx-background-color: white; -fx-border-width: 2; -fx-border-color: gray; -fx-border-radius: 60; -fx-background-radius: 62;">
+            <VBox layoutX="944.0" layoutY="617.0" prefHeight="439.0" prefWidth="629.0" spacing="30.0">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <children>
+                  <Button fx:id="zB1" layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#click3" prefHeight="90.0" prefWidth="300.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;" text="6">
+                     <font>
+                        <Font name="Dubai Medium" size="35.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="zB11" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#clic4" prefHeight="90.0" prefWidth="300.0" style="-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2; -fx-background-color: white;" text="6">
+                     <font>
+                        <Font name="Dubai Medium" size="35.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
+                     </effect>
+                  </Button>
+               </children>
+            </VBox>
+            <Pane layoutX="396.0" layoutY="161.0" prefHeight="436.0" prefWidth="1103.0" style="-fx-background-color: white; -fx-border-width: 2; -fx-border-color: gray; -fx-border-radius: 60; -fx-background-radius: 62;">
                <children>
                   <Text fx:id="intentoss" fill="#727272" layoutX="141.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pregunta 0 de 0" textAlignment="CENTER" wrappingWidth="584.8033447265625">
                      <font>
                         <Font name="Dubai Medium" size="24.0" />
                      </font>
                   </Text>
-                  <Text fx:id="fT" fill="#393939" layoutX="166.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Cuánto es 2 + 2?" textAlignment="CENTER" wrappingWidth="533.469970703125">
+                  <Text fx:id="lT" fill="#393939" layoutX="-1.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hipopotomonstrosesquipedaliofobia Hipopotomonstrosesquipedaliofobia Hipopotomonstrosesquipedaliofobia Hipopotomonstrosesquipedaliofobia Hipopotomonstrosesquipedaliofobia Hipopotomonstrosesquipedaliofobia" textAlignment="CENTER" wrappingWidth="1121.469970703125">
                      <font>
-                        <Font name="Dubai Medium" size="64.0" />
+                        <Font name="Dubai Medium" size="36.0" />
                      </font>
                   </Text>
                </children>
@@ -126,7 +141,7 @@
                   <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
                </effect>
             </Pane>
-            <Pane fx:id="popup" prefHeight="200.0" prefWidth="200.0">
+            <Pane fx:id="popup" prefHeight="200.0" prefWidth="200.0" visible="false">
                <children>
                   <Pane prefHeight="1051.0" prefWidth="1932.0" style="-fx-background-color: black; -fx-opacity: 25%;" />
                   <Pane layoutX="468.0" layoutY="235.0" prefHeight="647.0" prefWidth="926.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-width: 3; -fx-border-radius: 100; -fx-background-radius: 100;">

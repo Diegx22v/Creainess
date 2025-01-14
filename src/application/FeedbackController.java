@@ -92,7 +92,7 @@ public class FeedbackController {
         errorAlert.setContentText("error: " + a);
         Stage errores = (Stage) errorAlert.getDialogPane().getScene().getWindow();
         errores.getIcons().add(new Image(getClass().getResourceAsStream("resources/error_icon.png")));
-        errorAlert.showAndWait();
+        errorAlert.show();
     }
 }
 

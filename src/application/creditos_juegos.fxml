@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@resources/menu_principal.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Creditos_juegos">
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@resources/menu_principal.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Creditos_juegos">
    <padding>
       <Insets top="35.0" />
    </padding>
    <content>
-      <GridPane prefHeight="1080.0" prefWidth="1920.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <Pane prefHeight="1095.0" prefWidth="1920.0">
          <children>
-            <MediaView fx:id="videocre" fitHeight="1080.0" fitWidth="1920.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <MediaView fx:id="videocre" fitHeight="1080.0" fitWidth="1920.0" layoutY="-35.0" />
+            <Button fx:id="buton" layoutX="38.0" layoutY="13.0" mnemonicParsing="false" onMousePressed="#avanzar" onMouseReleased="#desavanzar" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: gray; -fx-border-radius: 40; -fx-background-radius: 40;" text="Acelerar">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <effect>
+                  <DropShadow height="14.0" offsetY="1.5" radius="6.5" width="14.0" />
+               </effect>
+            </Button>
          </children>
-      </GridPane>
+      </Pane>
    </content>
 </ScrollPane>

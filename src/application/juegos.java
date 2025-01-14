@@ -16,6 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.Screen;
 /**
  * Clase de la ventana de juegos.
@@ -30,7 +31,8 @@ public class juegos {
     @FXML
     public Button jugar;
     
-    
+    @FXML
+    private MediaView mediocre;
     /*
         Texto de titulo
     */
@@ -38,7 +40,7 @@ public class juegos {
     public Text tittle;
     
     
-    private MediaPlayer mediaPlayer;
+    private MediaPlayer mediaPlayer, mediaPlayer1;
 
     /*
         Texto de SubTitulo
@@ -75,23 +77,32 @@ public class juegos {
     /**
      metodo para inicializar animaciones o eventos.
      */
-    @FXML
-    public void initialize(){
-     inicializarAnimacion_boton_jugar(); 
-     inicializarAnimacion_boton_creditos(); 
-     inicializarAnimacion_boton_salir(); 
-     initialize_animation_return_credits();
-        try {
-        String audio = getClass().getResource("resources/sans.mp3").toExternalForm();
-        Media sound = new Media(audio);
-        mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.setVolume(0.5); // Establecer volumen al 50%
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE); // Reproducción infinita
-        mediaPlayer.play(); // Iniciar reproducción
-    } catch (Exception e) {
-        alerta_de_error(e);
-    }
+   @FXML
+public void initialize() {
+    inicializarAnimacion_boton_jugar();
+    inicializarAnimacion_boton_creditos();
+    inicializarAnimacion_boton_salir();
+    initialize_animation_return_credits();
+
+    try {
+    // Configuración de video
+    String videoPath = getClass().getResource("resources/prefondo.mp4").toExternalForm();
+    Media video = new Media(videoPath);
+    MediaPlayer mediaPlayer1 = new MediaPlayer(video);
+    mediaPlayer1.setCycleCount(MediaPlayer.INDEFINITE);
+
+    // Configuración del reproductor de video en el MediaView
+    mediocre.setMediaPlayer(mediaPlayer1);
+
+    // Inicia la reproducción del video
+    mediaPlayer1.play();
+} catch (Exception e) {
+    alerta_de_error(e);
+        System.err.println(e);
 }
+
+}
+
 
 public void alerta_de_error(Exception e) {
     Alert errorAlert = new Alert(Alert.AlertType.ERROR);
@@ -168,7 +179,6 @@ public void alerta_de_error(Exception e) {
                     }));
                     timeline.setCycleCount(1); // Ejecutar una sola vez
                     timeline.play();
-                                mediaPlayer.stop();
                     
                     /**                    
                      * CARGAR VIDEO DE RULETA Y DESAPARECER LOS ELEMENTOS PARA QUE SE QUEDE SOLO LA RULETA Y SU VIDEO
@@ -281,6 +291,7 @@ public void alerta_de_error(Exception e) {
                     break;
                 default:
                     System.out.println("error");
+            
                 }
         }catch(IllegalStateException e){
             alerta_de_error("Cantidad de juegos excedida",e);
@@ -302,6 +313,9 @@ public void alerta_de_error(Exception e) {
     double screenHeight = screenBounds.getHeight();
     
     // Cargar el archivo FXML
+    
+  
+    
     FXMLLoader loader = new FXMLLoader(getClass().getResource("juego1.fxml"));
     ScrollPane main = loader.load();
     
@@ -326,14 +340,14 @@ public void alerta_de_error(Exception e) {
     stackPane.setAlignment(Pos.CENTER);
     
     // Crear y configurar un nuevo Stage
-    //Stage newStage = new Stage();
-    currentStage.setMaximized(true);
-    currentStage.setTitle("TECHCON");
-    currentStage.setScene(scene);
+    Stage newStage = new Stage();
+    newStage.setMaximized(true);
+    newStage.setTitle("TECHCON");
+    newStage.setScene(scene);
     
     // Configuración del ícono
     Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
-    currentStage.getIcons().add(icono);
+    newStage.getIcons().add(icono);
     
     // Detener el reproductor de audio si está activo
     if (mediaPlayer != null) {
@@ -341,7 +355,7 @@ public void alerta_de_error(Exception e) {
     }
     
     // Mostrar la nueva ventana
-    currentStage.show();
+    newStage.show();
 } catch (IOException ex) {
     Logger.getLogger(Juego2.class.getName()).log(Level.SEVERE, null, ex);
 }
@@ -353,8 +367,67 @@ public void alerta_de_error(Exception e) {
      * Metodo de cierre
      */
     @FXML
-    public void salir(){
-        System.exit(0);
+    public void c(){
+        try {
+            
+            Stage cerrar = (Stage) jugar.getScene().getWindow();
+            cerrar.close();
+                      
+                        Stage primaryStage = new Stage();
+            double baseWidth = 1920;
+            double baseHeight = 1080;
+
+            // Detectar resolución de pantalla
+            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+            double screenWidth = screenBounds.getWidth();
+            double screenHeight = screenBounds.getHeight();
+
+            // Configuración de la ventana principal
+            Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
+            primaryStage.getIcons().add(icono);
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("menu_principal.fxml"));
+            GridPane main = loader.load(); // Se asegura de que el GridPane es el nodo raíz
+
+            // Crear un grupo para aplicar el escalado al contenido
+            Group scalableGroup = new Group(main);
+
+            // Crear una escena con la resolución detectada
+            Scene scene = new Scene(new StackPane(scalableGroup), screenWidth, screenHeight);
+            scene.getStylesheets().add(getClass().getResource("resources/interfaz_principal.css").toExternalForm());
+
+            // Calcular el factor de escalado
+            double scaleX = screenWidth / baseWidth;
+            double scaleY = screenHeight / baseHeight;
+            double scale = Math.min(scaleX, scaleY); // Mantener proporciones
+
+            // Aplicar el escalado
+            scalableGroup.setScaleX(scale);
+            scalableGroup.setScaleY(scale);
+
+            // Centrar el contenido escalado en la ventana
+            StackPane stackPane = (StackPane) scene.getRoot();
+            stackPane.setAlignment(Pos.CENTER);
+
+            // Configuración del Stage
+            primaryStage.setMaximized(true);
+            primaryStage.setTitle("Contribuidores");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+            // Mostrar la nueva ventana
+            cerrar.close();
+        } catch (Exception e) {
+            // ALERTA`
+            Alert errorAlert = new Alert(AlertType.ERROR);
+            errorAlert.setTitle("Error en la Aplicación");
+            errorAlert.setHeaderText("Error en la ejecución");
+            errorAlert.setContentText("error: " + e);
+
+            Stage errores = (Stage) errorAlert.getDialogPane().getScene().getWindow();
+            errores.getIcons().add(new Image(getClass().getResourceAsStream("resources/error_icon.png")));
+            errorAlert.showAndWait();
+        }
     }
     
     
@@ -479,7 +552,7 @@ public void alerta_de_error(Exception e) {
     @FXML
     public void ventana_creditos() {
         try {
-            mediaPlayer.stop();
+            
             Stage stage = (Stage) creditos.getScene().getWindow();
             stage.close();
             double baseWidth = 1920;
@@ -533,6 +606,7 @@ public void alerta_de_error(Exception e) {
     @FXML
     public ScaleTransition credits_return_animation;
     
+    
     /*
         Imagen de retorno
     */
@@ -579,7 +653,7 @@ public void alerta_de_error(Exception e) {
             Stage cerrar = (Stage) jugar.getScene().getWindow();
             cerrar.close();
                       
-            Stage primaryStage = new Stage();
+                        Stage primaryStage = new Stage();
             double baseWidth = 1920;
             double baseHeight = 1080;
 
@@ -591,6 +665,7 @@ public void alerta_de_error(Exception e) {
             // Configuración de la ventana principal
             Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
             primaryStage.getIcons().add(icono);
+            
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("menu_principal.fxml"));
             GridPane main = loader.load(); // Se asegura de que el GridPane es el nodo raíz
@@ -623,6 +698,7 @@ public void alerta_de_error(Exception e) {
 
             // Mostrar la nueva ventana
             cerrar.close();
+       
         } catch (Exception e) {
             // ALERTA`
             Alert errorAlert = new Alert(AlertType.ERROR);

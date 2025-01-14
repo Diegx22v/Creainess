@@ -11,7 +11,9 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -24,6 +26,9 @@ public class Creditos_juegos {
 
     @FXML
     private MediaView videocre;
+    
+    @FXML
+    private Button buton;
 
     private MediaPlayer mediaPlayer;
 
@@ -31,6 +36,7 @@ public class Creditos_juegos {
     public void initialize() {
         try {
             // Ruta del video
+            
             Media video = new Media(getClass().getResource("resources/CREDITOS_TECH-CON.mp4").toExternalForm());
             mediaPlayer = new MediaPlayer(video);
             videocre.setMediaPlayer(mediaPlayer);
@@ -43,11 +49,28 @@ public class Creditos_juegos {
                 Stage stage = (Stage) videocre.getScene().getWindow();
                 stage.close();
                 cargarPaginaPrincipal(stage);
+                
             });
         } catch (Exception e) {
             alerta_de_error("Error al reproducir el video", e);
         }
     }
+    @FXML
+    void desavanzar(MouseEvent event) {
+        
+        mediaPlayer.setRate(1);
+        buton.setStyle("-fx-border-color: gray; -fx-border-radius: 100; -fx-background-radius: 100; "
+        + "-fx-border-width: 2; -fx-background-color: white;");
+    }
+    @FXML
+    void avanzar(MouseEvent event) {
+
+        mediaPlayer.setRate(2);
+        buton.setStyle("-fx-border-color: #4d4d4d; -fx-border-radius: 100; -fx-background-radius: 100; "
+        + "-fx-border-width: 2; -fx-background-color: gray;");
+          
+    }
+    
 
     private void cargarPaginaPrincipal(Stage stage) {
         try {

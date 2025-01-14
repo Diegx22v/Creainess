@@ -14,7 +14,7 @@
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Juego2">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1092.0" prefWidth="1920.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1080.0" prefWidth="1920.0">
          <children>
             <Button fx:id="quitarp" layoutX="69.0" layoutY="462.0" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#quitarpu" prefHeight="187.0" prefWidth="187.0" style="-fx-border-color: gray; -fx-border-radius: 30; -fx-background-radius: 30; -fx-border-width: 2; -fx-background-color: white;">
                <font>
@@ -134,4 +134,7 @@
             </Pane>
          </children></AnchorPane>
   </content>
+   <padding>
+      <Insets top="20.0" />
+   </padding>
 </ScrollPane>

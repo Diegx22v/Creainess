@@ -326,14 +326,14 @@ public void alerta_de_error(Exception e) {
     stackPane.setAlignment(Pos.CENTER);
     
     // Crear y configurar un nuevo Stage
-    Stage newStage = new Stage();
-    newStage.setMaximized(true);
-    newStage.setTitle("TECHCON");
-    newStage.setScene(scene);
+    //Stage newStage = new Stage();
+    currentStage.setMaximized(true);
+    currentStage.setTitle("TECHCON");
+    currentStage.setScene(scene);
     
     // Configuración del ícono
     Image icono = new Image(getClass().getResourceAsStream("resources/TECHCOM.png"));
-    newStage.getIcons().add(icono);
+    currentStage.getIcons().add(icono);
     
     // Detener el reproductor de audio si está activo
     if (mediaPlayer != null) {
@@ -341,7 +341,7 @@ public void alerta_de_error(Exception e) {
     }
     
     // Mostrar la nueva ventana
-    newStage.show();
+    currentStage.show();
 } catch (IOException ex) {
     Logger.getLogger(Juego2.class.getName()).log(Level.SEVERE, null, ex);
 }
@@ -575,11 +575,11 @@ public void alerta_de_error(Exception e) {
     @FXML
     public void return_main1() {
         try {
-            Return_credits.setDisable(true);
-            Stage cerrar = (Stage) Return_credits.getScene().getWindow();
+            jugar.setDisable(true);
+            Stage cerrar = (Stage) jugar.getScene().getWindow();
             cerrar.close();
                       
-                        Stage primaryStage = new Stage();
+            Stage primaryStage = new Stage();
             double baseWidth = 1920;
             double baseHeight = 1080;
 
@@ -634,7 +634,7 @@ public void alerta_de_error(Exception e) {
             errores.getIcons().add(new Image(getClass().getResourceAsStream("resources/error_icon.png")));
             errorAlert.showAndWait();
         }finally{
-            Return_credits.setDisable(false);
+            jugar.setDisable(false);
         }
     }
     
